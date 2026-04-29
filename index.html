@@ -1,0 +1,1443 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+<meta name="theme-color" content="#0a2418">
+<title>مسجد إيشيكاوا — حملة بناء المسجد الثاني | Ishikawa Masjid — Second Masjid Campaign</title>
+<meta name="description" content="مسجد إيشيكاوا — حملة بناء المسجد الثاني في جزيرة أوكيناوا - اليابان. ساهم في إكمال المسجد ليظل منارة للإسلام. | Ishikawa Masjid — Help build the second masjid in Okinawa, Japan. Support our campaign so it remains a beacon of Islam on the island.">
+
+<!-- ═══ Open Graph / Facebook / WhatsApp link preview ═══ -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="مسجد إيشيكاوا — حملة بناء المسجد الثاني | Ishikawa Masjid — Second Masjid Campaign">
+<meta property="og:description" content="ساهم في إكمال المسجد الثاني في جزيرة أوكيناوا - اليابان. صدقة جارية لك ولوالديك. | Help us complete the second masjid in Okinawa, Japan. An ongoing charity (Sadaqah Jariyah) for you and your parents.">
+<meta property="og:image" content="https://ayman-alashkar.github.io/donations/01.png">
+<meta property="og:image:secure_url" content="https://ayman-alashkar.github.io/donations/01.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="960">
+<meta property="og:image:alt" content="مسجد إيشيكاوا - أوكيناوا | Ishikawa Masjid - Okinawa">
+<meta property="og:url" content="https://ayman-alashkar.github.io/donations/">
+<meta property="og:site_name" content="مسجد إيشيكاوا | Ishikawa Masjid">
+<meta property="og:locale" content="ar_AR">
+<meta property="og:locale:alternate" content="en_US">
+
+<!-- ═══ Twitter Card ═══ -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="مسجد إيشيكاوا — حملة بناء المسجد الثاني | Ishikawa Masjid — Second Masjid Campaign">
+<meta name="twitter:description" content="ساهم في إكمال المسجد الثاني في أوكيناوا - اليابان | Help build the second masjid in Okinawa, Japan">
+<meta name="twitter:image" content="https://ayman-alashkar.github.io/donations/01.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;700;900&family=Reem+Kufi:wght@400;700&family=Inter:wght@400;600;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html{
+  width:100%; max-width:100%;
+  overflow-x:hidden;
+  -webkit-text-size-adjust:100%;
+  text-size-adjust:100%;
+}
+body{
+  width:100%; max-width:100%;
+  overflow-x:hidden;
+  margin:0; padding:0;
+  background:#0a0a0a;
+  display:flex; flex-direction:column; align-items:center;
+  font-family:'Cairo',sans-serif;
+  min-height:100vh;
+}
+:root{
+  --g1:#0a2418; --g2:#143a24; --g3:#1d5034;
+  --gold:#c8921e; --gold2:#e6b83a; --gold3:#f7e5a5; --gold4:#fff4cf;
+  --cream:#fdf8ee; --cream2:#f4ecd6; --cream3:#ebe0bf;
+  --red:#7a1424; --red2:#3d0a14;
+  --white:#fff; --ink:#1a0f00;
+}
+
+html[lang="en"] body{ font-family:'Inter',sans-serif; }
+
+/* Show/hide language-specific text */
+.txt-en{ display:none; }
+html[lang="en"] .txt-ar{ display:none; }
+html[lang="en"] .txt-en{ display:inline; }
+html[lang="en"] .txt-en.block{ display:block; }
+html[lang="ar"] .txt-ar.block{ display:block; }
+
+/* ══ DOWNLOAD/SHARE/LANG BUTTONS ══ */
+.dl-wrap{
+  position:sticky; top:0; z-index:100;
+  width:100%; max-width:560px;
+  padding:6px;
+  background:#0a0a0a;
+  display:grid;
+  grid-template-columns:1fr 1fr auto;
+  gap:6px;
+  border-bottom:1px solid rgba(200,146,30,0.3);
+}
+.dl-btn{
+  padding:8px 6px;
+  background:linear-gradient(135deg,var(--gold),#a87010);
+  color:var(--g1);
+  border:1.5px solid var(--gold3);
+  border-radius:7px;
+  font-family:'Cairo',sans-serif;
+  font-size:13px; font-weight:700;
+  cursor:pointer;
+  display:flex; align-items:center; justify-content:center; gap:4px;
+  box-shadow:0 2px 8px rgba(200,146,30,0.3);
+  transition:all .2s;
+  white-space:nowrap;
+}
+html[lang="en"] .dl-btn{ font-family:'Inter',sans-serif; }
+.dl-btn:active{transform:scale(0.97);}
+.dl-btn.loading{opacity:0.7; pointer-events:none;}
+.dl-btn.share{
+  background:linear-gradient(135deg,#1d5034,#0a2418);
+  color:var(--gold3); border-color:var(--gold);
+}
+.dl-btn.lang{
+  background:linear-gradient(135deg,#1d5034,#0a2418);
+  color:var(--gold3); border-color:var(--gold);
+  min-width:54px;
+  padding:8px 10px;
+  font-size:12px;
+}
+
+/* ══ FLYER ══ */
+.flyer{
+  width:100%;
+  max-width:560px;
+  min-width:0;
+  background:var(--cream);
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 10px 40px rgba(0,0,0,0.5);
+}
+.flyer::before{
+  content:''; position:absolute; inset:4px;
+  border:1px solid rgba(200,146,30,0.4);
+  pointer-events:none; z-index:50;
+}
+.flyer::after{
+  content:''; position:absolute; inset:7px;
+  border:1px solid rgba(200,146,30,0.18);
+  pointer-events:none; z-index:50;
+}
+
+/* ══ HEADER ══ */
+.hdr{
+  background:
+    radial-gradient(ellipse at top,rgba(200,146,30,0.12),transparent 60%),
+    linear-gradient(155deg,var(--g1) 0%,var(--g2) 55%,var(--g1) 100%);
+  position:relative; overflow:hidden;
+  border-top:1px solid var(--gold);
+}
+.hdr-pat{
+  position:absolute;inset:0;pointer-events:none;opacity:.08;
+  background-image:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cg fill='none' stroke='%23f7e5a5' stroke-width='0.7'%3E%3Cpolygon points='30,5 36,15 47,15 38,23 42,34 30,28 18,34 22,23 13,15 24,15'/%3E%3Crect x='10' y='10' width='40' height='40' transform='rotate(45 30 30)'/%3E%3Ccircle cx='30' cy='30' r='12'/%3E%3C/g%3E%3C/svg%3E");
+}
+.hdr-frame{
+  position:absolute; inset:5px;
+  border:1px solid rgba(200,146,30,0.4);
+  pointer-events:none; z-index:1;
+}
+.hdr-frame::after{
+  content:''; position:absolute; inset:3px;
+  border:1px solid rgba(200,146,30,0.18);
+}
+.hdr-corner{
+  position:absolute; width:14px; height:14px;
+  border:1px solid var(--gold); z-index:2;
+}
+.hdr-corner.tl{top:7px; left:7px; border-right:none; border-bottom:none;}
+.hdr-corner.tr{top:7px; right:7px; border-left:none; border-bottom:none;}
+.hdr-corner.bl{bottom:7px; left:7px; border-right:none; border-top:none;}
+.hdr-corner.br{bottom:7px; right:7px; border-left:none; border-top:none;}
+.hdr-inner{
+  padding:10px 14px 8px;
+  position:relative; z-index:2;
+  display:flex; align-items:center; gap:10px;
+}
+.mosque-art{
+  flex-shrink:0; width:70px;
+  display:flex; align-items:flex-end; justify-content:center;
+  opacity:.9;
+}
+.hdr-center{flex:1; text-align:center; min-width:0;}
+.bismillah{font-family:'Amiri',serif;font-size:13px;color:var(--gold3);margin-bottom:2px;letter-spacing:1px;}
+.bismillah-en{font-family:'Inter',sans-serif;font-size:9px;color:var(--gold3);letter-spacing:.5px;font-style:italic;margin-bottom:1px;}
+.mname{
+  font-family:'Reem Kufi','Amiri',serif;font-size:36px;font-weight:700;
+  color:var(--white);line-height:1;
+  text-shadow:0 2px 12px rgba(0,0,0,0.5);
+  letter-spacing:1px;
+}
+html[lang="en"] .mname{
+  font-family:'Playfair Display',serif;
+  font-size:30px; letter-spacing:2px;
+}
+.mloc{font-size:10.5px;color:var(--gold2);margin-top:3px;letter-spacing:.3px;}
+html[lang="en"] .mloc{font-family:'Inter',sans-serif;}
+.hdr-rule{display:flex;align-items:center;justify-content:center;gap:5px;margin-top:3px;}
+.hdr-rule hr{width:35px;border:none;border-top:1px solid var(--gold);opacity:.6;}
+.hdr-diamond{width:5px;height:5px;background:var(--gold);transform:rotate(45deg);}
+.badge{
+  flex-shrink:0;
+  background:linear-gradient(135deg,var(--gold2),var(--gold),#a87010);
+  border:1.5px solid var(--gold3);
+  padding:6px 8px; text-align:center;
+  clip-path:polygon(50% 0%,85% 8%,100% 30%,100% 70%,85% 92%,50% 100%,15% 92%,0% 70%,0% 30%,15% 8%);
+  box-shadow:0 3px 12px rgba(0,0,0,0.4);
+  min-width:90px;
+}
+.badge-top{font-size:9px;color:var(--g1);font-weight:700;}
+html[lang="en"] .badge-top{font-family:'Inter',sans-serif;}
+.badge-main{font-family:'Amiri',serif;font-size:13px;font-weight:700;color:var(--g1);line-height:1.15;display:block;margin:1px 0;}
+html[lang="en"] .badge-main{font-family:'Inter',sans-serif;font-size:11px;}
+.badge-sub{font-size:8.5px;color:#3a1a00;line-height:1.3;}
+html[lang="en"] .badge-sub{font-family:'Inter',sans-serif;}
+
+/* ══ DIVIDERS ══ */
+.gold-div{
+  height:5px;
+  background:linear-gradient(90deg,var(--g1),var(--gold),var(--g2),var(--gold),var(--g1));
+  position:relative;
+}
+.gold-div::after{
+  content:'❖ ❖ ❖';
+  position:absolute; top:50%; left:50%;
+  transform:translate(-50%,-50%);
+  color:var(--gold3); font-size:7px;
+  background:var(--g1); padding:0 7px;
+  letter-spacing:3px;
+}
+
+/* ══ RIBBON ══ */
+.ribbon{
+  background:linear-gradient(90deg,var(--gold),var(--gold2),var(--gold));
+  padding:4px 14px; text-align:center;
+  border-top:1px solid var(--gold3);
+  border-bottom:1px solid #a87010;
+}
+.ribbon p{font-family:'Amiri',serif;font-size:12px;font-weight:700;color:var(--g1);}
+html[lang="en"] .ribbon p{font-family:'Inter',sans-serif;font-size:11.5px;}
+
+/* ══ SECTION BANNER ══ */
+.sec{
+  background:linear-gradient(90deg,var(--g1),var(--g2),var(--g1));
+  padding:4px 14px;
+  display:flex;align-items:center;justify-content:center;gap:6px;
+  border-top:1px solid rgba(200,146,30,0.25);
+  border-bottom:1px solid rgba(200,146,30,0.25);
+}
+.sec::before,.sec::after{content:'❖';color:var(--gold);font-size:9px;}
+.sec span{font-family:'Amiri',serif;font-size:13px;font-weight:700;color:var(--gold3);letter-spacing:.3px;}
+html[lang="en"] .sec span{font-family:'Inter',sans-serif;font-size:11.5px;letter-spacing:.5px;text-transform:uppercase;}
+
+/* ══ STORY ══ */
+.story{
+  background:var(--cream);
+  padding:6px 14px;
+}
+.story p{font-family:'Amiri',serif;font-size:12px;line-height:1.6;color:var(--ink);text-align:justify;}
+html[lang="en"] .story p{font-family:'Inter',sans-serif;font-size:11.5px;line-height:1.5;}
+.story-hl{
+  background:linear-gradient(135deg,rgba(200,146,30,.12),rgba(200,146,30,.05));
+  border-right:3px solid var(--gold);
+  border-radius:0 5px 5px 0;
+  padding:5px 9px;margin-top:4px;
+  font-family:'Amiri',serif;font-size:11.5px;font-weight:700;
+  color:var(--g2);line-height:1.55;
+}
+html[lang="en"] .story-hl{
+  font-family:'Inter',sans-serif;font-size:11px;
+  border-right:none; border-left:3px solid var(--gold);
+  border-radius:5px 0 0 5px;
+}
+
+/* ══ LAND ══ */
+.land{background:var(--cream2);padding:6px 14px;display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.land-card{
+  background:var(--white);
+  border:1px solid var(--gold);
+  border-radius:5px;padding:5px 7px;
+  display:flex;align-items:center;gap:7px;
+  position:relative;
+}
+.land-card::before{
+  content:''; position:absolute; inset:2px;
+  border:1px dashed rgba(200,146,30,0.25);
+  border-radius:3px; pointer-events:none;
+}
+.land-card .lc-icon{font-size:17px;flex-shrink:0;}
+.lc-label{font-size:9.5px;color:#888;font-weight:600;line-height:1.2;}
+html[lang="en"] .lc-label{font-family:'Inter',sans-serif;}
+.lc-value{font-family:'Amiri',serif;font-size:13px;font-weight:700;color:var(--g1);line-height:1.15;}
+html[lang="en"] .lc-value{font-family:'Inter',sans-serif;font-size:12px;}
+.lc-sub{font-size:9px;color:var(--g2);line-height:1.2;}
+html[lang="en"] .lc-sub{font-family:'Inter',sans-serif;}
+
+/* ══ FINANCIAL ══ */
+.fin{background:var(--cream);padding:6px 14px 7px;}
+.agreed{
+  background:linear-gradient(90deg,#f8f0d8,#fff8e0,#f8f0d8);
+  border:1px solid var(--gold);border-radius:6px;
+  padding:5px 9px;margin-bottom:6px;
+  display:flex;align-items:center;gap:8px;
+  position:relative;
+}
+.agreed::before{
+  content:''; position:absolute; inset:2px;
+  border:1px dotted rgba(200,146,30,0.3);
+  border-radius:4px; pointer-events:none;
+}
+.agreed-icon{font-size:18px;flex-shrink:0;}
+.agreed-lbl{font-size:10px;color:#666;font-weight:600;line-height:1.25;}
+html[lang="en"] .agreed-lbl{font-family:'Inter',sans-serif;}
+.agreed-amt{font-family:'Amiri',serif;font-size:20px;font-weight:700;color:var(--g1);line-height:1.05;}
+html[lang="en"] .agreed-amt{font-family:'Inter',sans-serif;}
+.agreed-sub{font-size:9.5px;color:#888;}
+html[lang="en"] .agreed-sub{font-family:'Inter',sans-serif;}
+
+.stats3{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin-bottom:6px;}
+.sc{
+  border-radius:5px;padding:5px 3px;text-align:center;
+  position:relative; overflow:hidden;
+  border:1px solid rgba(255,255,255,0.15);
+}
+.sc::before{
+  content:''; position:absolute; inset:2px;
+  border:1px dashed rgba(255,255,255,0.18);
+  border-radius:3px; pointer-events:none;
+}
+.sc1{background:linear-gradient(135deg,var(--g2),var(--g1));}
+.sc2{background:linear-gradient(135deg,var(--g3),var(--g2));}
+.sc3{background:linear-gradient(135deg,var(--red),var(--red2));}
+.sc .sn{font-family:'Amiri',serif;font-size:13px;font-weight:700;color:var(--white);display:block;direction:ltr;position:relative;z-index:1;}
+html[lang="en"] .sc .sn{font-family:'Inter',sans-serif;}
+.sc .sl{font-size:8.5px;color:rgba(255,255,255,.85);display:block;margin-top:1px;position:relative;z-index:1;line-height:1.25;}
+html[lang="en"] .sc .sl{font-family:'Inter',sans-serif;}
+
+.prog-row{margin-bottom:5px;}
+.prog-lbls{display:flex;justify-content:space-between;font-size:9.5px;margin-bottom:2px;}
+html[lang="en"] .prog-lbls{font-family:'Inter',sans-serif;}
+.prog-lbls .pl{color:var(--g3);font-weight:700;}
+.prog-lbls .pr{color:var(--red);font-weight:700;}
+.prog-track{height:7px;border-radius:3px;overflow:hidden;display:flex;border:1px solid rgba(0,0,0,0.1);}
+.prog-track .pf{background:linear-gradient(90deg,var(--gold),var(--g3));width:47.7%;}
+.prog-track .pe{background:var(--red);width:52.3%;}
+
+.deadline{
+  background:linear-gradient(90deg,var(--red2),var(--red),var(--red2));
+  border-radius:5px;padding:5px 9px;
+  display:flex;align-items:flex-start;gap:7px;
+  border:1px solid rgba(200,146,30,0.3);
+}
+.deadline .dl-i{font-size:14px;flex-shrink:0;margin-top:1px;}
+.deadline .dl-t{font-family:'Amiri',serif;font-size:10.5px;color:#FFE0C0;line-height:1.55;}
+html[lang="en"] .deadline .dl-t{font-family:'Inter',sans-serif;font-size:10px;}
+.deadline .dl-t strong{color:#FFD580;}
+
+/* ══ DONATE CTA BLOCK ══ */
+.cta-wrap{
+  background:linear-gradient(135deg,#0a2418,#143a24,#0a2418);
+  padding:8px 14px 9px;
+  position:relative;
+  border-top:1px solid var(--gold);
+  border-bottom:1px solid var(--gold);
+  overflow:hidden;
+}
+.cta-wrap::before{
+  content:''; position:absolute; inset:0;
+  background:repeating-conic-gradient(rgba(200,146,30,.06) 0% 25%,transparent 0% 50%) 0 0/16px 16px;
+  pointer-events:none;
+}
+.cta-intro{
+  text-align:center;
+  font-family:'Amiri',serif;
+  font-size:11px;
+  color:var(--gold3);
+  margin-bottom:6px;
+  position:relative; z-index:1;
+  line-height:1.4;
+}
+html[lang="en"] .cta-intro{font-family:'Inter',sans-serif;font-size:10.5px;}
+.cta-intro strong{color:var(--gold2);}
+.cta-row{
+  display:flex; align-items:stretch; gap:9px;
+  position:relative; z-index:1;
+}
+.cta-btn{
+  flex:1;
+  background:linear-gradient(135deg,var(--gold2),var(--gold),#a87010);
+  border:2px solid var(--gold3);
+  border-radius:8px;
+  padding:7px 10px 8px;
+  text-align:center;
+  text-decoration:none;
+  color:var(--g1);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:1px;
+  box-shadow:
+    0 4px 14px rgba(230,184,58,0.5),
+    0 1px 3px rgba(0,0,0,0.3),
+    inset 0 1px 0 rgba(255,255,255,0.4),
+    inset 0 -2px 0 rgba(58,26,0,0.15);
+  position:relative;
+  transition:transform .12s, box-shadow .12s;
+  min-width:0;
+  cursor:pointer;
+  animation:ctaPulse 2.2s ease-in-out infinite;
+}
+@keyframes ctaPulse{
+  0%, 100%{
+    box-shadow:
+      0 4px 14px rgba(230,184,58,0.5),
+      0 1px 3px rgba(0,0,0,0.3),
+      inset 0 1px 0 rgba(255,255,255,0.4),
+      inset 0 -2px 0 rgba(58,26,0,0.15);
+  }
+  50%{
+    box-shadow:
+      0 4px 22px rgba(230,184,58,0.85),
+      0 0 0 3px rgba(230,184,58,0.25),
+      0 1px 3px rgba(0,0,0,0.3),
+      inset 0 1px 0 rgba(255,255,255,0.4),
+      inset 0 -2px 0 rgba(58,26,0,0.15);
+  }
+}
+.cta-btn::before{
+  content:''; position:absolute; inset:3px;
+  border:1px dashed rgba(58,26,0,0.3);
+  border-radius:5px; pointer-events:none;
+}
+.cta-btn:active{
+  transform:scale(0.97);
+  animation:none;
+  box-shadow:0 2px 6px rgba(200,146,30,0.4), inset 0 2px 4px rgba(58,26,0,0.2);
+}
+.cta-btn:hover{ animation:none; transform:translateY(-1px); }
+.cta-tap-hint{
+  display:inline-flex; align-items:center; gap:3px;
+  background:var(--g1);
+  color:var(--gold2);
+  font-size:8.5px; font-weight:700;
+  padding:1.5px 8px;
+  border-radius:10px;
+  letter-spacing:.4px;
+  margin-bottom:2px;
+  border:1px solid var(--gold);
+  text-transform:uppercase;
+}
+html[lang="en"] .cta-tap-hint{font-family:'Inter',sans-serif;}
+.cta-btn-icon{font-size:18px;line-height:1;}
+.cta-btn-main{
+  font-family:'Amiri',serif;font-size:15px;font-weight:700;color:var(--g1);
+  line-height:1.15; letter-spacing:.3px;
+  margin-top:1px;
+}
+html[lang="en"] .cta-btn-main{font-family:'Inter',sans-serif;font-size:13.5px;}
+.cta-btn-platform{
+  font-size:9.5px;font-weight:700;color:#3a1a00;
+  margin-top:1px; letter-spacing:.5px;
+}
+html[lang="en"] .cta-btn-platform{font-family:'Inter',sans-serif;}
+.cta-btn-sub{
+  font-size:8px; color:#3a1a00; line-height:1.3;
+  margin-top:2px; opacity:.85;
+}
+html[lang="en"] .cta-btn-sub{font-family:'Inter',sans-serif;}
+
+.cta-or{
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:3px; flex-shrink:0;
+  position:relative; z-index:1;
+}
+.cta-or-line{
+  width:1px; height:18px;
+  background:linear-gradient(to bottom, transparent, var(--gold), transparent);
+}
+.cta-or-text{
+  font-size:9px; color:var(--gold2); font-weight:700;
+  letter-spacing:1px;
+}
+html[lang="en"] .cta-or-text{font-family:'Inter',sans-serif;}
+
+.cta-qr{
+  flex-shrink:0;
+  background:var(--white);
+  border:2px solid var(--gold);
+  border-radius:8px;
+  padding:5px;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  width:88px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.3);
+}
+.cta-qr canvas, .cta-qr img{
+  display:block;
+  width:72px !important; height:72px !important;
+}
+.cta-qr-lbl{
+  font-size:7.5px; color:var(--g1); font-weight:700;
+  margin-top:3px; line-height:1.1; letter-spacing:.3px;
+  text-align:center;
+}
+html[lang="en"] .cta-qr-lbl{font-family:'Inter',sans-serif;}
+
+/* ══ FOOTER LAUNCHGOOD COL ══ */
+.fc-online{
+  text-align:center;
+  display:flex; flex-direction:column; align-items:center;
+}
+.fc-online-qr{
+  background:var(--white);
+  border:1px solid var(--gold);
+  border-radius:4px;
+  padding:3px;
+  margin:4px 0 3px;
+}
+.fc-online-qr canvas, .fc-online-qr img{
+  display:block;
+  width:62px !important; height:62px !important;
+}
+.fc-online-lbl{
+  font-family:'Amiri',serif;
+  font-size:9.5px; color:var(--gold2); font-weight:700;
+  line-height:1.3; text-align:center;
+}
+html[lang="en"] .fc-online-lbl{font-family:'Inter',sans-serif;font-size:9px;}
+.fc-online-platform{
+  font-size:8px; color:rgba(255,255,255,.65);
+  text-align:center; margin-top:1px;
+  font-family:'Inter',sans-serif;
+  letter-spacing:.3px;
+}
+
+/* ══ ADDRESS LINE ══ */
+.addr-line{
+  background:var(--g1);
+  padding:4px 14px;
+  text-align:center;
+  border-top:1px solid rgba(200,146,30,0.2);
+}
+.addr-line span{
+  font-family:'Inter',sans-serif;
+  font-size:9px;
+  color:rgba(255,255,255,0.6);
+  letter-spacing:.2px;
+}
+.addr-line .addr-icon{
+  color:var(--gold2);
+  margin-right:3px;
+}
+
+/* ══ HERO ══ */
+.hero{
+  background:linear-gradient(155deg,var(--g1),var(--g2));
+  padding:7px 14px;text-align:center;
+  position:relative;overflow:hidden;
+}
+.hero-pat{
+  position:absolute;inset:0;pointer-events:none; opacity:0.6;
+  background:repeating-conic-gradient(rgba(200,146,30,.05) 0% 25%,transparent 0% 50%) 0 0/16px 16px;
+}
+.hero-pill{
+  display:inline-block;background:var(--gold);
+  color:var(--g1);font-size:10px;font-weight:700;
+  padding:2px 10px;border-radius:18px;margin-bottom:2px;
+  position:relative;z-index:1;
+  border:1px solid var(--gold3);
+}
+html[lang="en"] .hero-pill{font-family:'Inter',sans-serif;}
+.hero-amt{
+  font-family:'Amiri',serif;font-size:34px;font-weight:700;
+  color:var(--gold2);display:block;line-height:1;
+  text-shadow:0 2px 12px rgba(0,0,0,.5);
+  position:relative;z-index:1;
+}
+html[lang="en"] .hero-amt{font-family:'Inter',sans-serif;}
+.hero-sub{font-size:10.5px;color:rgba(255,255,255,.7);position:relative;z-index:1;margin-top:2px;}
+html[lang="en"] .hero-sub{font-family:'Inter',sans-serif;}
+
+.cost-split{
+  background:var(--cream2);padding:5px 14px;
+  display:grid;grid-template-columns:1fr 1fr;gap:5px;
+}
+.cost-item{
+  background:rgba(200,146,30,.15);border:1px solid var(--gold);
+  border-radius:4px;padding:4px 8px;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.cost-item .ci-l{font-family:'Amiri',serif;font-size:10.5px;color:var(--ink);}
+html[lang="en"] .cost-item .ci-l{font-family:'Inter',sans-serif;font-size:10px;}
+.cost-item .ci-v{font-size:10.5px;font-weight:700;color:var(--g1);direction:ltr;}
+html[lang="en"] .cost-item .ci-v{font-family:'Inter',sans-serif;}
+
+/* ══ ACTIVITIES ══ */
+.acts{background:var(--cream);padding:6px 14px;display:grid;grid-template-columns:repeat(3,1fr);gap:5px;}
+.act{
+  background:var(--white);border:1px solid var(--gold);
+  border-radius:5px;padding:5px 4px;text-align:center;
+  box-shadow:0 1px 3px rgba(0,0,0,.05);
+  position:relative;
+}
+.act::before{
+  content:''; position:absolute; inset:2px;
+  border:1px dashed rgba(200,146,30,0.22);
+  border-radius:3px; pointer-events:none;
+}
+.act .ai{font-size:16px;display:block;margin-bottom:1px;}
+.act .al{font-family:'Amiri',serif;font-size:10.5px;font-weight:700;color:var(--g1);line-height:1.35;}
+html[lang="en"] .act .al{font-family:'Inter',sans-serif;font-size:10px;}
+
+/* ══ SHARE ══ */
+.share{
+  background:linear-gradient(90deg,var(--g1),var(--g2),var(--g1));
+  padding:6px 14px;display:flex;align-items:center;gap:9px;
+  border-top:1px solid rgba(200,146,30,0.25);
+  border-bottom:1px solid rgba(200,146,30,0.25);
+}
+.share-ico{
+  width:28px;height:28px;background:var(--gold);
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:13px;flex-shrink:0;
+  border:1.5px solid var(--gold3);
+}
+.share-t1{font-family:'Amiri',serif;font-size:12px;font-weight:700;color:var(--gold3);line-height:1.2;}
+html[lang="en"] .share-t1{font-family:'Inter',sans-serif;font-size:11.5px;}
+.share-t2{font-size:9.5px;color:rgba(255,255,255,.7);margin-top:1px;line-height:1.4;}
+html[lang="en"] .share-t2{font-family:'Inter',sans-serif;}
+
+/* ══ DUA ══ */
+.dua{background:var(--cream);padding:6px 14px;}
+.dua-intro{font-family:'Amiri',serif;font-size:10.5px;color:var(--ink);text-align:center;line-height:1.55;margin-bottom:5px;}
+html[lang="en"] .dua-intro{font-family:'Inter',sans-serif;font-size:10px;font-style:italic;}
+.dua-box{
+  background:linear-gradient(135deg,var(--g1),var(--g2));
+  border:1.5px solid var(--gold);border-radius:6px;
+  padding:7px 10px 6px;text-align:center;position:relative;overflow:hidden;
+}
+.dua-box::before{
+  content:''; position:absolute; inset:3px;
+  border:1px solid rgba(200,146,30,0.25);
+  border-radius:4px; pointer-events:none;
+}
+.dua-box-pat{
+  position:absolute;inset:0;pointer-events:none;
+  background:repeating-conic-gradient(rgba(200,146,30,.04) 0% 25%,transparent 0% 50%) 0 0/14px 14px;
+}
+/* Hadith Arabic always shown in Amiri (Arabic must always look like Arabic) */
+.dua-hadith{font-family:'Amiri',serif;font-size:12.5px;color:var(--gold2);margin-bottom:4px;position:relative;z-index:1;line-height:1.45;direction:rtl;}
+.dua-hadith-tr{font-family:'Inter',sans-serif;font-size:10px;color:var(--gold3);font-style:italic;display:block;margin-top:3px;line-height:1.4;direction:ltr;}
+.dua-hadith-src{font-family:'Inter',sans-serif;font-size:8.5px;color:rgba(247,229,165,0.6);display:block;margin-top:1px;direction:ltr;}
+.dua-main{font-family:'Amiri',serif;font-size:10.5px;color:#d0ead4;line-height:1.55;position:relative;z-index:1;}
+html[lang="en"] .dua-main{font-family:'Inter',sans-serif;font-size:10px;}
+.dua-end{font-family:'Amiri',serif;font-size:13px;font-weight:700;color:var(--gold2);margin-top:4px;position:relative;z-index:1;}
+html[lang="en"] .dua-end{font-family:'Inter',sans-serif;font-size:12px;letter-spacing:.5px;}
+
+/* ══ FOOTER ══ */
+.footer{
+  background:var(--g1);border-top:2px solid var(--gold);
+  display:grid;grid-template-columns:1fr 1fr 1fr;
+}
+.fc{border-left:1px solid rgba(255,255,255,.1);}
+.fc:last-child{border-left:none;}
+.fc-head{
+  background:linear-gradient(90deg,var(--gold),var(--gold2),var(--gold));
+  padding:3px 8px;
+  display:flex;align-items:center;gap:3px;
+  border-bottom:1px solid #a87010;
+}
+.fc-head-i{font-size:11px;}
+.fc-head-t{font-family:'Amiri',serif;font-size:11px;font-weight:700;color:var(--g1);}
+html[lang="en"] .fc-head-t{font-family:'Inter',sans-serif;font-size:10.5px;text-transform:uppercase;letter-spacing:.5px;}
+.fc-body{padding:5px 8px 6px;}
+.fcl{
+  font-size:9.5px;color:rgba(255,255,255,.82);
+  line-height:1.65;display:block;text-align:right;
+}
+html[lang="en"] .fcl{font-family:'Inter',sans-serif;text-align:left;}
+.fcl.bold{color:var(--gold2);font-weight:700;font-size:10px;}
+.fcl.ltr{direction:ltr;text-align:left;font-size:9px;}
+.fcl.email{
+  direction:ltr; text-align:left; font-size:8.5px;
+  color:var(--gold3); text-decoration:none;
+  word-break:break-all;
+  margin-top:3px;
+}
+.fcl.email:hover{ color:var(--gold2); text-decoration:underline; }
+
+.bot-bar{
+  height:5px;
+  background:linear-gradient(90deg,var(--g1),var(--gold),var(--g2),var(--gold),var(--g1));
+  position:relative;
+}
+.bot-bar::after{
+  content:'❖';
+  position:absolute; top:50%; left:50%;
+  transform:translate(-50%,-50%);
+  color:var(--gold3); font-size:7px;
+  background:var(--g1); padding:0 6px;
+}
+
+/* ══ RESPONSIVE ══ */
+@media (max-width:580px){
+  .dl-wrap{ max-width:none; }
+}
+@media (max-width:380px){
+  .mname{ font-size:30px; }
+  html[lang="en"] .mname{ font-size:25px; }
+  .hero-amt{ font-size:28px; }
+  .agreed-amt{ font-size:17px; }
+  .sc .sn{ font-size:11px; }
+  .badge{ min-width:78px; padding:5px 6px; }
+  .badge-main{ font-size:11px; }
+  .mosque-art{ width:60px; }
+  .mosque-art svg{ width:60px; height:75px; }
+  .dl-btn{ font-size:12px; padding:7px 4px; }
+  .dl-btn.lang{ font-size:11px; padding:7px 8px; min-width:48px; }
+  .cta-btn-main{ font-size:13px; }
+  html[lang="en"] .cta-btn-main{ font-size:12px; }
+  .cta-qr{ width:78px; }
+  .cta-qr canvas, .cta-qr img{ width:64px !important; height:64px !important; }
+  .cta-or{ display:none; }
+  .cta-row{ gap:6px; }
+}
+</style>
+</head>
+<body>
+
+<!-- DOWNLOAD / SHARE / LANGUAGE BUTTONS -->
+<div class="dl-wrap">
+  <button class="dl-btn" id="dlBtn" onclick="downloadPNG()">
+    <span class="txt-ar">📥 تحميل كصورة</span>
+    <span class="txt-en">📥 Download</span>
+  </button>
+  <button class="dl-btn share" onclick="shareFlyer()">
+    <span class="txt-ar">🔗 مشاركة</span>
+    <span class="txt-en">🔗 Share</span>
+  </button>
+  <button class="dl-btn lang" onclick="toggleLang()" id="langBtn">
+    <span class="txt-ar">🌐 EN</span>
+    <span class="txt-en">🌐 ع</span>
+  </button>
+</div>
+
+<div class="flyer" id="flyer">
+
+  <!-- HEADER -->
+  <div class="hdr">
+    <div class="hdr-pat"></div>
+    <div class="hdr-frame"></div>
+    <div class="hdr-corner tl"></div>
+    <div class="hdr-corner tr"></div>
+    <div class="hdr-corner bl"></div>
+    <div class="hdr-corner br"></div>
+    <div class="hdr-inner">
+      <div class="mosque-art">
+        <svg viewBox="0 0 90 110" width="70" height="85" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#e6b83a" stop-opacity="0.5"/>
+              <stop offset="100%" stop-color="#c8921e" stop-opacity="0.15"/>
+            </linearGradient>
+          </defs>
+          <rect x="3" y="40" width="10" height="50" rx="2" fill="url(#g)" stroke="#c8921e" stroke-width="0.8"/>
+          <polygon points="3,40 13,40 11,30 5,30" fill="#c8921e" opacity="0.55"/>
+          <path d="M5,30 Q8,24 11,30" fill="none" stroke="#c8921e" stroke-width="0.8"/>
+          <circle cx="8" cy="24" r="1.2" fill="#c8921e"/>
+          <line x1="8" y1="22" x2="8" y2="18" stroke="#c8921e" stroke-width="0.7"/>
+          <rect x="77" y="40" width="10" height="50" rx="2" fill="url(#g)" stroke="#c8921e" stroke-width="0.8"/>
+          <polygon points="77,40 87,40 85,30 79,30" fill="#c8921e" opacity="0.55"/>
+          <path d="M79,30 Q82,24 85,30" fill="none" stroke="#c8921e" stroke-width="0.8"/>
+          <circle cx="82" cy="24" r="1.2" fill="#c8921e"/>
+          <line x1="82" y1="22" x2="82" y2="18" stroke="#c8921e" stroke-width="0.7"/>
+          <rect x="14" y="65" width="62" height="25" rx="2" fill="url(#g)" stroke="#c8921e" stroke-width="0.8"/>
+          <path d="M18,65 Q18,38 45,28 Q72,38 72,65 Z" fill="url(#g)" stroke="#c8921e" stroke-width="1"/>
+          <circle cx="45" cy="22" r="1.5" fill="#c8921e"/>
+          <line x1="45" y1="20" x2="45" y2="14" stroke="#c8921e" stroke-width="0.8"/>
+          <path d="M42,17 Q45,13 48,17" fill="none" stroke="#c8921e" stroke-width="0.7"/>
+          <path d="M14,65 Q14,55 24,52 Q34,55 34,65 Z" fill="#c8921e" opacity="0.25" stroke="#c8921e" stroke-width="0.6"/>
+          <path d="M56,65 Q56,55 66,52 Q76,55 76,65 Z" fill="#c8921e" opacity="0.25" stroke="#c8921e" stroke-width="0.6"/>
+          <path d="M38,90 L38,80 Q38,73 45,73 Q52,73 52,80 L52,90 Z" fill="#0a2418" opacity="0.7" stroke="#c8921e" stroke-width="0.7"/>
+          <path d="M24,82 L24,76 Q24,72 28,72 Q32,72 32,76 L32,82 Z" fill="none" stroke="#c8921e" stroke-width="0.6" opacity="0.65"/>
+          <path d="M58,82 L58,76 Q58,72 62,72 Q66,72 66,76 L66,82 Z" fill="none" stroke="#c8921e" stroke-width="0.6" opacity="0.65"/>
+          <line x1="0" y1="90" x2="90" y2="90" stroke="#c8921e" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="hdr-center">
+        <div class="bismillah">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
+        <div class="bismillah-en txt-en">In the Name of Allah, Most Gracious, Most Merciful</div>
+        <div class="mname">
+          <span class="txt-ar">مسجد إيشيكاوا</span>
+          <span class="txt-en">ISHIKAWA MASJID</span>
+        </div>
+        <div class="mloc">
+          <span class="txt-ar">إيشيكاوا — أوكيناوا — اليابان 🇯🇵</span>
+          <span class="txt-en">Ishikawa — Okinawa — Japan 🇯🇵</span>
+        </div>
+        <div class="hdr-rule"><hr><div class="hdr-diamond"></div><hr></div>
+      </div>
+      <div class="badge">
+        <div class="badge-top">
+          <span class="txt-ar">ساهم في</span>
+          <span class="txt-en">Contribute to</span>
+        </div>
+        <span class="badge-main">
+          <span class="txt-ar">إكمال<br>المسجد الثاني</span>
+          <span class="txt-en">Completing<br>the Second Masjid</span>
+        </span>
+        <div class="badge-sub">
+          <span class="txt-ar">منارة للإسلام<br>في الجزيرة</span>
+          <span class="txt-en">A beacon of Islam<br>on the island</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="gold-div"></div>
+
+  <!-- RIBBON -->
+  <div class="ribbon">
+    <p>
+      <span class="txt-ar">🕌 &nbsp; حملة بناء المسجد الثاني في أوكيناوا — نداء عاجل &nbsp; 🕌</span>
+      <span class="txt-en">🕌 &nbsp; Campaign to Build the Second Masjid in Okinawa — Urgent Appeal &nbsp; 🕌</span>
+    </p>
+  </div>
+
+  <!-- STORY -->
+  <div class="story">
+    <p class="txt-ar block">مسجد إيشيكاوا يقع في وسط جزيرة أوكيناوا — اليابان. والتي يبلغ عدد سكانها حوالي <strong>1.5 مليون نسمة</strong>، ويُقدَّر عدد المسلمين فيها بـ <strong>2,000–3,000 شخص</strong>.</p>
+    <p class="txt-en block">Ishikawa Masjid is located in the heart of Okinawa Island, Japan. The island has a population of approximately <strong>1.5 million</strong>, with an estimated <strong>2,000–3,000 Muslims</strong> living among them.</p>
+    <div class="story-hl">
+      <span class="txt-ar">لا يوجد في الجزيرة سوى مسجد واحد صغير في ناها. نحن بصدد بناء <strong>المسجد الثاني</strong> في إيشيكاوا — على بُعد <strong>30 كم</strong> عن مسجد ناها.</span>
+      <span class="txt-en">There is currently only one small masjid on the island, located in Naha. We are now building the <strong>second masjid</strong> in Ishikawa — about <strong>30 km</strong> away from Naha Masjid.</span>
+    </div>
+  </div>
+
+  <!-- LAND -->
+  <div class="sec">
+    <span class="txt-ar">مساحة الأرض والوضع الحالي</span>
+    <span class="txt-en">Land Area & Current Status</span>
+  </div>
+  <div class="land">
+    <div class="land-card">
+      <div class="lc-icon">📐</div>
+      <div>
+        <div class="lc-label">
+          <span class="txt-ar">المساحة الإجمالية</span>
+          <span class="txt-en">Total Area</span>
+        </div>
+        <div class="lc-value">
+          <span class="txt-ar">74 تسوبو (坪)</span>
+          <span class="txt-en">74 Tsubo (坪)</span>
+        </div>
+        <div class="lc-sub">
+          <span class="txt-ar">≈ 245–250 م²</span>
+          <span class="txt-en">≈ 245–250 m²</span>
+        </div>
+      </div>
+    </div>
+    <div class="land-card">
+      <div class="lc-icon">🏗</div>
+      <div>
+        <div class="lc-label">
+          <span class="txt-ar">الوضع الحالي</span>
+          <span class="txt-en">Current Status</span>
+        </div>
+        <div class="lc-value">
+          <span class="txt-ar">مصلى صغير</span>
+          <span class="txt-en">Small Prayer Hall</span>
+        </div>
+        <div class="lc-sub">
+          <span class="txt-ar">والباقي ينتظر البناء</span>
+          <span class="txt-en">Rest awaiting construction</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FINANCIAL -->
+  <div class="sec">
+    <span class="txt-ar">تفاصيل شراء أرض المسجد</span>
+    <span class="txt-en">Land Purchase Details</span>
+  </div>
+  <div class="fin">
+    <div class="agreed">
+      <div class="agreed-icon">📋</div>
+      <div>
+        <div class="agreed-lbl">
+          <span class="txt-ar">تم الاتفاق على الشراء عام 2024 بمبلغ:</span>
+          <span class="txt-en">Purchase agreed in 2024 for:</span>
+        </div>
+        <div class="agreed-amt">
+          <span class="txt-ar">120,400 دولار</span>
+          <span class="txt-en">$120,400 USD</span>
+        </div>
+        <div class="agreed-sub">
+          <span class="txt-ar">يُسدَّد خلال سنة واحدة</span>
+          <span class="txt-en">To be paid within one year</span>
+        </div>
+      </div>
+    </div>
+    <div class="stats3">
+      <div class="sc sc1">
+        <span class="sn">120,400$</span>
+        <span class="sl">
+          <span class="txt-ar">المبلغ الإجمالي للأرض</span>
+          <span class="txt-en">Total Land Amount</span>
+        </span>
+      </div>
+      <div class="sc sc2">
+        <span class="sn">57,400$</span>
+        <span class="sl">
+          <span class="txt-ar">المبلغ المدفوع</span>
+          <span class="txt-en">Amount Paid</span>
+        </span>
+      </div>
+      <div class="sc sc3">
+        <span class="sn">63,000$</span>
+        <span class="sl">
+          <span class="txt-ar">المبلغ المتبقي</span>
+          <span class="txt-en">Amount Remaining</span>
+        </span>
+      </div>
+    </div>
+    <div class="prog-row">
+      <div class="prog-lbls">
+        <span class="pl">
+          <span class="txt-ar">✅ 47.7% تم جمعه</span>
+          <span class="txt-en">✅ 47.7% Raised</span>
+        </span>
+        <span class="pr">
+          <span class="txt-ar">⏳ 52.3% متبقي</span>
+          <span class="txt-en">⏳ 52.3% Remaining</span>
+        </span>
+      </div>
+      <div class="prog-track"><div class="pf"></div><div class="pe"></div></div>
+    </div>
+    <div class="deadline">
+      <div class="dl-i">⚠️</div>
+      <div class="dl-t">
+        <span class="txt-ar">المهلة حتى نهاية <strong>يوليو 2026</strong> — وإلا يُلغى العقد وتُفقد <strong>28,700 دولار</strong>. كل مبلغ تتبرع به، مهما كان صغيراً، يُقرِّبنا من الهدف.</span>
+        <span class="txt-en">Deadline by end of <strong>July 2026</strong> — otherwise the contract will be cancelled and <strong>$28,700</strong> already paid will be lost. Every donation, no matter how small, brings us closer to the goal.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- DONATE CTA -->
+  <div class="cta-wrap">
+    <div class="cta-intro">
+      <span class="txt-ar">💝 <strong>تبرّع الآن</strong> — اضغط على الزر أو امسح الرمز</span>
+      <span class="txt-en">💝 <strong>Donate Now</strong> — tap the button or scan the QR code</span>
+    </div>
+    <div class="cta-row">
+      <a class="cta-btn" href="https://www.launchgood.com/v4/campaign/save_ishikawa_masjid_the_only_house_of_allah_in_central_okinawa?src=6784436" target="_blank" rel="noopener">
+        <span class="cta-tap-hint">
+          <span class="txt-ar">👆 اضغط هنا</span>
+          <span class="txt-en">👆 TAP HERE</span>
+        </span>
+        <div class="cta-btn-icon">🤲</div>
+        <div class="cta-btn-main">
+          <span class="txt-ar">تبرّع الآن</span>
+          <span class="txt-en">Donate Now</span>
+        </div>
+        <div class="cta-btn-platform">
+          <span class="txt-ar">عبر LaunchGood</span>
+          <span class="txt-en">via LaunchGood</span>
+        </div>
+        <div class="cta-btn-sub">
+          <span class="txt-ar">آمن وموثوق • متابعة مباشرة</span>
+          <span class="txt-en">Secure & trusted • Live tracking</span>
+        </div>
+      </a>
+      <div class="cta-or">
+        <div class="cta-or-line"></div>
+        <div class="cta-or-text">
+          <span class="txt-ar">أو</span>
+          <span class="txt-en">OR</span>
+        </div>
+        <div class="cta-or-line"></div>
+      </div>
+      <div class="cta-qr">
+        <div id="ctaQr"></div>
+        <div class="cta-qr-lbl">
+          <span class="txt-ar">📱 امسح للتبرع</span>
+          <span class="txt-en">📱 SCAN TO DONATE</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <div class="sec">
+    <span class="txt-ar">خطة المشروع الكاملة (الأرض + البناء)</span>
+    <span class="txt-en">Full Project Plan (Land + Construction)</span>
+  </div>
+  <div class="hero">
+    <div class="hero-pat"></div>
+    <div class="hero-pill">
+      <span class="txt-ar">✨ المبلغ الإجمالي الكامل للمشروع</span>
+      <span class="txt-en">✨ Total Full Project Amount</span>
+    </div>
+    <span class="hero-amt">~$250,000</span>
+    <div class="hero-sub">
+      <span class="txt-ar">يشمل الأرض + بناء المسجد المتكامل</span>
+      <span class="txt-en">Includes the land + full masjid construction</span>
+    </div>
+  </div>
+  <div class="cost-split">
+    <div class="cost-item">
+      <span class="ci-l">
+        <span class="txt-ar">🗺️ تكلفة الأرض المتبقية</span>
+        <span class="txt-en">🗺️ Remaining Land Cost</span>
+      </span>
+      <span class="ci-v">$62K–$65K</span>
+    </div>
+    <div class="cost-item">
+      <span class="ci-l">
+        <span class="txt-ar">🏗 بناء المسجد</span>
+        <span class="txt-en">🏗 Masjid Construction</span>
+      </span>
+      <span class="ci-v">$155K–$190K</span>
+    </div>
+  </div>
+
+  <!-- ACTIVITIES -->
+  <div class="sec">
+    <span class="txt-ar">تم الاستفادة من المسجد بشكل كامل خلال هذا العام</span>
+    <span class="txt-en">The Masjid Has Been Fully Utilized This Year</span>
+  </div>
+  <div class="acts">
+    <div class="act">
+      <span class="ai">🕋</span>
+      <div class="al">
+        <span class="txt-ar">إقامة<br><strong>الصلوات اليومية</strong></span>
+        <span class="txt-en">Establishing<br><strong>Daily Prayers</strong></span>
+      </div>
+    </div>
+    <div class="act">
+      <span class="ai">🌙</span>
+      <div class="al">
+        <span class="txt-ar">صلاة<br><strong>التراويح في رمضان</strong></span>
+        <span class="txt-en"><strong>Taraweeh Prayers</strong><br>in Ramadan</span>
+      </div>
+    </div>
+    <div class="act">
+      <span class="ai">📖</span>
+      <div class="al">
+        <span class="txt-ar">حلقات تحفيظ القرآن<br><strong>للأطفال</strong></span>
+        <span class="txt-en">Quran Memorization<br><strong>for Children</strong></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SHARE -->
+  <div class="share">
+    <div class="share-ico">🔗</div>
+    <div>
+      <div class="share-t1">
+        <span class="txt-ar">شارك هذه المبادرة مع أصدقائك وأحبتّك</span>
+        <span class="txt-en">Share this initiative with your friends and loved ones</span>
+      </div>
+      <div class="share-t2">
+        <span class="txt-ar">لينالوا أجر هذه الصدقة الجارية بإذن الله، إذ لا يوجد مسجد في هذه البلدة.</span>
+        <span class="txt-en">So they may earn the reward of this ongoing charity (Sadaqah Jariyah), as there is no masjid in this town.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- DUA -->
+  <div class="dua">
+    <div class="dua-intro">
+      <span class="txt-ar">نسأل الله أن ييسر لنا جمع هذا المبلغ، وأن يبقى هذا المسجد منارةً لخدمة الإسلام والمسلمين في هذه الجزيرة الجميلة.</span>
+      <span class="txt-en">We ask Allah to make it easy for us to raise this amount, and that this masjid remains a beacon serving Islam and Muslims on this beautiful island.</span>
+    </div>
+    <div class="dua-box">
+      <div class="dua-box-pat"></div>
+      <div class="dua-hadith">
+        « مَنْ بَنَى مَسْجِدًا لِلَّهِ بَنَى اللَّهُ لَهُ بَيْتًا فِي الْجَنَّةِ »
+        <span class="dua-hadith-tr txt-en">"Whoever builds a masjid for Allah, Allah will build for him a house in Paradise."</span>
+        <span class="dua-hadith-src txt-en">— Reported by Bukhari & Muslim</span>
+      </div>
+      <div class="dua-main">
+        <span class="txt-ar">نسأل الله أن يجزيكم خير الجزاء على دعمكم،<br>وأن يبني لكم بيتًا في الجنة، كما تساهمون في بناء بيت من بيوته في الدنيا.</span>
+        <span class="txt-en">May Allah reward you abundantly for your support,<br>and build for you a house in Paradise, just as you help build one of His houses in this world.</span>
+      </div>
+      <div class="dua-end">
+        <span class="txt-ar">🤲 جزاكم الله خيراً</span>
+        <span class="txt-en">🤲 Jazakum Allahu Khairan</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="gold-div"></div>
+  <div class="footer">
+    <div class="fc">
+      <div class="fc-head">
+        <span class="fc-head-i">🏦</span>
+        <span class="fc-head-t">
+          <span class="txt-ar">تفاصيل التبرع</span>
+          <span class="txt-en">Donation</span>
+        </span>
+      </div>
+      <div class="fc-body">
+        <span class="fcl bold">OKINAWA BANK</span>
+        <span class="fcl">
+          <span class="txt-ar">الفرع: Ishikawa</span>
+          <span class="txt-en">Branch: Ishikawa</span>
+        </span>
+        <span class="fcl">
+          <span class="txt-ar">رقم الفرع: 315</span>
+          <span class="txt-en">Branch No: 315</span>
+        </span>
+        <span class="fcl">
+          <span class="txt-ar">نوع الحساب: Futsu</span>
+          <span class="txt-en">Account Type: Futsu</span>
+        </span>
+        <span class="fcl">
+          <span class="txt-ar">رقم الحساب: 1776257</span>
+          <span class="txt-en">Account No: 1776257</span>
+        </span>
+        <span class="fcl bold ltr">ISHIKAWA MASJID</span>
+        <span class="fcl ltr">HASSAN A. MILAD</span>
+      </div>
+    </div>
+    <div class="fc">
+      <div class="fc-head">
+        <span class="fc-head-i">📞</span>
+        <span class="fc-head-t">
+          <span class="txt-ar">للتواصل</span>
+          <span class="txt-en">Contact</span>
+        </span>
+      </div>
+      <div class="fc-body">
+        <span class="fcl bold">
+          <span class="txt-ar">أحمد ميلاد</span>
+          <span class="txt-en">Ahmad Milad</span>
+        </span>
+        <span class="fcl ltr">+81 80 9853 8815</span>
+        <span class="fcl bold">
+          <span class="txt-ar">مير أحمد</span>
+          <span class="txt-en">Mir Ahmad</span>
+        </span>
+        <span class="fcl ltr">+81 90 6422 0786</span>
+        <a href="mailto:Ishikawamasjid@gmail.com" class="fcl email">✉ Ishikawamasjid@gmail.com</a>
+      </div>
+    </div>
+    <div class="fc">
+      <div class="fc-head">
+        <span class="fc-head-i">🌐</span>
+        <span class="fc-head-t">
+          <span class="txt-ar">تبرّع أونلاين</span>
+          <span class="txt-en">Donate Online</span>
+        </span>
+      </div>
+      <div class="fc-body fc-online">
+        <div class="fc-online-qr"><div id="footerQr"></div></div>
+        <div class="fc-online-lbl">
+          <span class="txt-ar">امسح للتبرع</span>
+          <span class="txt-en">Scan to Donate</span>
+        </div>
+        <div class="fc-online-platform">LaunchGood</div>
+      </div>
+    </div>
+  </div>
+  <!-- ADDRESS LINE -->
+  <div class="addr-line">
+    <span><span class="addr-icon">📍</span>1-44-24 Ishikawa, Uruma, Okinawa 904-1106, Japan &nbsp;•&nbsp; 🕌 Ishikawa Masjid</span>
+  </div>
+  <div class="bot-bar"></div>
+
+</div>
+
+<!-- QR Code library (generates QR codes locally, no API needed) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<!-- DOWNLOAD / SHARE / LANG SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/npm/html-to-image@1.11.13/dist/html-to-image.min.js"></script>
+<script>
+const LAUNCHGOOD_URL = 'https://www.launchgood.com/v4/campaign/save_ishikawa_masjid_the_only_house_of_allah_in_central_okinawa?src=6784436';
+
+// Generate QR codes on page load
+function generateQRs() {
+  if (typeof QRCode === 'undefined') return;
+  const ctaQrDiv = document.getElementById('ctaQr');
+  const footerQrDiv = document.getElementById('footerQr');
+  if (ctaQrDiv && !ctaQrDiv.hasChildNodes()) {
+    new QRCode(ctaQrDiv, {
+      text: LAUNCHGOOD_URL,
+      width: 124,
+      height: 124,
+      colorDark: '#0a2418',
+      colorLight: '#ffffff',
+      correctLevel: QRCode.CorrectLevel.M
+    });
+  }
+  if (footerQrDiv && !footerQrDiv.hasChildNodes()) {
+    new QRCode(footerQrDiv, {
+      text: LAUNCHGOOD_URL,
+      width: 124,
+      height: 124,
+      colorDark: '#0a2418',
+      colorLight: '#ffffff',
+      correctLevel: QRCode.CorrectLevel.M
+    });
+  }
+}
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', generateQRs);
+} else {
+  generateQRs();
+}
+function toggleLang() {
+  const html = document.documentElement;
+  const isAr = html.getAttribute('lang') === 'ar';
+  if (isAr) {
+    html.setAttribute('lang', 'en');
+    html.setAttribute('dir', 'ltr');
+    document.title = 'Ishikawa Masjid — Building the Second Masjid in Okinawa';
+  } else {
+    html.setAttribute('lang', 'ar');
+    html.setAttribute('dir', 'rtl');
+    document.title = 'مسجد إيشيكاوا — حملة بناء المسجد الثاني في أوكيناوا';
+  }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+async function downloadPNG() {
+  const btn = document.getElementById('dlBtn');
+  const isEn = document.documentElement.getAttribute('lang') === 'en';
+  btn.classList.add('loading');
+  btn.innerHTML = isEn ? '⏳ Loading fonts...' : '⏳ جاري تحميل الخطوط...';
+
+  const flyer = document.getElementById('flyer');
+  const origStyle = flyer.getAttribute('style') || '';
+  const ctaButton = flyer.querySelector('.cta-btn');
+  const ctaOrigAnim = ctaButton ? ctaButton.style.animation : '';
+  let swappedQrs = [];
+
+  try {
+    // Pre-flight: html-to-image must be loaded
+    if (typeof htmlToImage === 'undefined' || !htmlToImage.toPng) {
+      throw new Error(isEn
+        ? 'Image library failed to load. Check internet and reload the page.'
+        : 'فشل تحميل مكتبة الصور. تحقق من الاتصال وأعد تحميل الصفحة.');
+    }
+
+    // Generate QRs if library loaded (silent skip if not)
+    generateQRs();
+    await new Promise(r => setTimeout(r, 100));
+
+    // Wait for fonts to be ready (gracefully handle older browsers)
+    if (document.fonts && document.fonts.ready) {
+      try { await document.fonts.ready; } catch(e) {}
+    }
+    if (document.fonts && typeof document.fonts.load === 'function') {
+      const fontSpecs = [
+        '400 12px Amiri',
+        '700 12px Amiri',
+        '700 36px "Reem Kufi"',
+        '700 13px Cairo',
+        '400 12px Inter',
+        '700 12px Inter',
+        '700 30px "Playfair Display"',
+      ];
+      // Wrap each call defensively because document.fonts.load can return undefined in some browsers
+      const fontPromises = fontSpecs.map(function(spec){
+        try {
+          const p = document.fonts.load(spec);
+          return (p && typeof p.then === 'function') ? p.catch(function(){}) : Promise.resolve();
+        } catch(e) { return Promise.resolve(); }
+      });
+      await Promise.all(fontPromises);
+    }
+    await new Promise(r => setTimeout(r, 500));
+
+    btn.innerHTML = isEn ? '⏳ Generating image...' : '⏳ إنشاء الصورة...';
+
+    // Convert canvas QR codes to <img> for reliable capture
+    swappedQrs = replaceQrCanvasesWithImg();
+    // Wait for the data URLs to fully decode (otherwise html-to-image fails on them)
+    await waitForImagesReady(swappedQrs);
+
+    flyer.setAttribute('style', origStyle + ';width:560px !important;');
+    if (ctaButton) ctaButton.style.animation = 'none';
+    await new Promise(r => setTimeout(r, 300));
+
+    const fullW = 560;
+    const fullH = flyer.scrollHeight;
+
+    const captureOptions = {
+      width: fullW,
+      height: fullH,
+      pixelRatio: 2.5,
+      backgroundColor: '#fdf8ee',
+      cacheBust: false,
+      skipFonts: true,
+      style: {
+        width: fullW + 'px',
+        height: fullH + 'px',
+        margin: '0',
+        transform: 'none'
+      },
+      // Skip any node whose external URL would fail to fetch (content://, file://, fonts, etc.)
+      filter: function(node){
+        if (!node || !node.tagName) return true;
+        // Skip Google Fonts <link> tags (CORS issues during embedding)
+        if (node.tagName === 'LINK') {
+          const href = node.href || node.getAttribute('href') || '';
+          if (/fonts\.googleapis\.com|fonts\.gstatic\.com/.test(href)) return false;
+        }
+        // Skip any external resource pointing to a non-http(s) URL
+        const checkUrl = function(url){
+          if (!url) return true;
+          // Allow data: URLs and same-origin paths; block content://, file://, blob: cross-origin
+          if (/^content:\/\//.test(url) || /^file:\/\//.test(url)) return false;
+          return true;
+        };
+        if (node.tagName === 'IMG' && !checkUrl(node.src)) return false;
+        if (node.tagName === 'SCRIPT') return false;  // never need scripts in the captured image
+        return true;
+      }
+    };
+
+    let dataUrl;
+    try {
+      // Use toCanvas first — more reliable on Chrome Android than toPng
+      const canvas = await htmlToImage.toCanvas(flyer, captureOptions);
+      dataUrl = canvas.toDataURL('image/png');
+    } catch(firstErr) {
+      console.warn('toCanvas failed, falling back to toPng:', firstErr);
+      try {
+        dataUrl = await htmlToImage.toPng(flyer, captureOptions);
+      } catch(secondErr) {
+        console.warn('toPng also failed, trying toJpeg:', secondErr);
+        // Last resort: JPEG (more forgiving with cross-origin/data-URL issues)
+        dataUrl = await htmlToImage.toJpeg(flyer, Object.assign({}, captureOptions, { quality: 0.95 }));
+      }
+    }
+
+    if (!dataUrl || typeof dataUrl !== 'string' || dataUrl.length < 100) {
+      throw new Error(isEn ? 'Image generation produced no data.' : 'لم يتم إنشاء الصورة.');
+    }
+
+    const filename = isEn ? 'Ishikawa-Masjid.png' : 'مسجد-إيشيكاوا.png';
+    const a = document.createElement('a');
+    a.download = filename;
+    a.href = dataUrl;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+
+    if (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream) {
+      const newTab = window.open();
+      if (newTab) {
+        const msg = isEn ? 'Long-press the image to save it' : 'اضغط مطولاً على الصورة لحفظها';
+        const ttl = isEn ? 'Ishikawa Masjid' : 'مسجد إيشيكاوا';
+        newTab.document.write('<html><head><title>'+ttl+'</title></head><body style="margin:0;background:#000;text-align:center;padding:20px;color:#fff;font-family:sans-serif;"><p>'+msg+'</p><img src="' + dataUrl + '" style="max-width:100%;height:auto;"></body></html>');
+      }
+    }
+
+  } catch(e) {
+    console.error('Download error:', e);
+    // Better error extraction — Event objects don't have .message, so handle them specially
+    let errMsg;
+    if (e && e.message) {
+      errMsg = e.message;
+    } else if (e instanceof Event) {
+      const target = e.target;
+      if (target && target.src) {
+        errMsg = (isEn ? 'Failed to load resource: ' : 'فشل تحميل المورد: ') + target.src;
+      } else {
+        errMsg = isEn ? 'A resource failed to load (likely a font or external image).' : 'فشل تحميل أحد الموارد (خط أو صورة خارجية).';
+      }
+    } else {
+      errMsg = String(e || 'Unknown error');
+    }
+    alert((isEn ? 'Error: ' : 'حدث خطأ: ') + errMsg);
+  } finally {
+    // ALWAYS restore everything, even on error
+    flyer.setAttribute('style', origStyle);
+    if (ctaButton) ctaButton.style.animation = ctaOrigAnim;
+    restoreQrCanvases(swappedQrs);
+    btn.classList.remove('loading');
+    btn.innerHTML = '<span class="txt-ar">📥 تحميل كصورة</span><span class="txt-en">📥 Download</span>';
+  }
+}
+
+// Convert qrcodejs canvases to <img> for reliable html-to-image capture
+function replaceQrCanvasesWithImg() {
+  const wrappers = document.querySelectorAll('#ctaQr, #footerQr');
+  const swapped = [];
+  wrappers.forEach(function(div){
+    const canvas = div.querySelector('canvas');
+    if (!canvas) return;
+    try {
+      const dataUrl = canvas.toDataURL('image/png');
+      const img = document.createElement('img');
+      img.src = dataUrl;
+      img.alt = 'QR Code';
+      // Match canvas dimensions explicitly so layout doesn't shift
+      img.width = canvas.width;
+      img.height = canvas.height;
+      img.style.width = canvas.style.width || (canvas.width + 'px');
+      img.style.height = canvas.style.height || (canvas.height + 'px');
+      canvas.style.display = 'none';
+      canvas.parentNode.insertBefore(img, canvas.nextSibling);
+      swapped.push({ canvas: canvas, img: img });
+    } catch(e) { console.warn('QR canvas->img conversion failed:', e); }
+  });
+  return swapped;
+}
+
+// Wait for all swapped <img> elements to actually finish decoding
+async function waitForImagesReady(swapped) {
+  if (!swapped || !swapped.length) return;
+  const promises = swapped.map(function(pair){
+    if (!pair.img) return Promise.resolve();
+    if (pair.img.complete && pair.img.naturalWidth > 0) return Promise.resolve();
+    return new Promise(function(resolve){
+      pair.img.onload = resolve;
+      pair.img.onerror = resolve;  // resolve even on error so we don't hang
+      // safety timeout
+      setTimeout(resolve, 1500);
+    });
+  });
+  await Promise.all(promises);
+}
+
+function restoreQrCanvases(swapped) {
+  if (!swapped) return;
+  swapped.forEach(function(pair){
+    if (pair.img && pair.img.parentNode) pair.img.parentNode.removeChild(pair.img);
+    if (pair.canvas) pair.canvas.style.display = '';
+  });
+}
+
+async function shareFlyer() {
+  const isEn = document.documentElement.getAttribute('lang') === 'en';
+  const pageUrl = window.location.href;
+  const text = isEn
+    ? '🕌 Campaign to build Ishikawa Masjid in Okinawa, Japan\nWe need your help to complete the project.\n\n💝 Donate via LaunchGood: ' + LAUNCHGOOD_URL
+    : '🕌 حملة بناء مسجد إيشيكاوا في أوكيناوا - اليابان\nنحتاج لمساعدتكم لإكمال المشروع.\n\n💝 للتبرع عبر LaunchGood: ' + LAUNCHGOOD_URL;
+  const title = isEn ? 'Ishikawa Masjid' : 'مسجد إيشيكاوا';
+  const copiedMsg = isEn
+    ? '✅ Link copied — you can now paste and share it'
+    : '✅ تم نسخ الرابط — يمكنك الآن لصقه ومشاركته';
+  if (navigator.share) {
+    try {
+      await navigator.share({ title: title, text: text, url: pageUrl });
+    } catch(e) {}
+  } else {
+    try {
+      await navigator.clipboard.writeText(text + '\n' + pageUrl);
+      alert(copiedMsg);
+    } catch(e) {
+      alert((isEn ? 'Link: ' : 'الرابط: ') + pageUrl);
+    }
+  }
+}
+</script>
+</body>
+</html>

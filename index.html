@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=5.0,user-scalable=yes,viewport-fit=cover">
 <meta name="theme-color" content="#0a2418">
 
-<title>مسجد إيشيكاوا — حملة بناء المسجد الثاني | Ishikawa Masjid — Second Masjid Campaign</title>
-<meta name="description" content="مسجد إيشيكاوا — حملة بناء المسجد الثاني في جزيرة أوكيناوا - اليابان. ساهم في إكمال المسجد ليظل منارة للإسلام. | Ishikawa Masjid — Help build the second masjid in Okinawa, Japan. Support our campaign so it remains a beacon of Islam on the island.">
+<title>مسجد إيشيكاوا — حملة بناء المسجد الثاني | Ishikawa Masjid — Second Masjid Campaign | 石川モスク 建設キャンペーン</title>
+<meta name="description" content="مسجد إيشيكاوا — حملة بناء المسجد الثاني في جزيرة أوكيناوا - اليابان. ساهم في إكمال المسجد ليظل منارة للإسلام. | Ishikawa Masjid — Help build the second masjid in Okinawa, Japan. | 沖縄島で2番目のモスク建設にご協力ください。">
 
 <!-- ════════ Social link preview (Open Graph) ════════ -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="مسجد إيشيكاوا — حملة بناء المسجد الثاني | Ishikawa Masjid — Second Masjid Campaign">
-<meta property="og:description" content="ساهم في إكمال المسجد الثاني في جزيرة أوكيناوا - اليابان. صدقة جارية لك ولوالديك. | Help us complete the second masjid in Okinawa, Japan. An ongoing charity (Sadaqah Jariyah) for you and your parents.">
+<meta property="og:title" content="مسجد إيشيكاوا — حملة بناء المسجد الثاني | Ishikawa Masjid — Second Masjid Campaign | 石川モスク 建設キャンペーン">
+<meta property="og:description" content="ساهم في إكمال المسجد الثاني في جزيرة أوكيناوا - اليابان. صدقة جارية لك ولوالديك. | Help us complete the second masjid in Okinawa, Japan. An ongoing charity (Sadaqah Jariyah) for you and your parents. | 沖縄県の2番目のモスク完成にご協力ください。あなたとご両親への永続的な善行（サダカ・ジャーリヤ）となります。">
 <meta property="og:image" content="https://ishikawa-masjid.github.io/donations_flyer/01.webp">
 <meta property="og:image:secure_url" content="https://ishikawa-masjid.github.io/donations_flyer/01.webp">
 <meta property="og:image:type" content="image/webp">
@@ -22,15 +22,16 @@
 <meta property="og:site_name" content="مسجد إيشيكاوا | Ishikawa Masjid">
 <meta property="og:locale" content="ar_AR">
 <meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
 
 <!-- ════════ Twitter Card ════════ -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="مسجد إيشيكاوا — حملة بناء المسجد الثاني | Ishikawa Masjid — Second Masjid Campaign">
-<meta name="twitter:description" content="ساهم في إكمال المسجد الثاني في أوكيناوا - اليابان | Help build the second masjid in Okinawa, Japan">
+<meta name="twitter:title" content="مسجد إيشيكاوا — حملة بناء المسجد الثاني | Ishikawa Masjid — Second Masjid Campaign | 石川モスク 建設キャンペーン">
+<meta name="twitter:description" content="ساهم في إكمال المسجد الثاني في أوكيناوا - اليابان | Help build the second masjid in Okinawa, Japan | 沖縄でのモスク建設にご協力ください">
 <meta name="twitter:image" content="https://ishikawa-masjid.github.io/donations_flyer/01.webp">
 
 <!-- ════════ Fonts ════════ -->
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;700;900&family=Reem+Kufi:wght@400;700&family=Inter:wght@400;600;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;700;900&family=Reem+Kufi:wght@400;700&family=Inter:wght@400;600;700;800&family=Playfair+Display:wght@700;900&family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@500;700;900&display=swap" rel="stylesheet">
 
 <style>
 /* ═══════════════════════════════════════════════════════════════════════
@@ -58,13 +59,19 @@ body{
 }
 
 /* ═══════════════════════════════════════════════════════════════════════
-   2.  LANGUAGE SWITCHING (Arabic ↔ English)
+   2.  LANGUAGE SWITCHING (Arabic ↔ English ↔ Japanese)
    ═══════════════════════════════════════════════════════════════════════ */
 html[lang="en"] body{ font-family:'Inter',sans-serif; }
-.txt-en{ display:none; }
-html[lang="en"] .txt-ar{ display:none; }
+html[lang="ja"] body{ font-family:'Noto Sans JP',sans-serif; }
+
+.txt-en, .txt-ja{ display:none; }
+html[lang="en"] .txt-ar, html[lang="en"] .txt-ja{ display:none; }
 html[lang="en"] .txt-en{ display:inline; }
-html[lang="en"] .txt-en.block{ display:block; }
+html[lang="ja"] .txt-ar, html[lang="ja"] .txt-en{ display:none; }
+html[lang="ja"] .txt-ja{ display:inline; }
+
+html[lang="en"] .txt-en.block,
+html[lang="ja"] .txt-ja.block,
 html[lang="ar"] .txt-ar.block{ display:block; }
 
 /* ═══════════════════════════════════════════════════════════════════════
@@ -92,6 +99,7 @@ html[lang="ar"] .txt-ar.block{ display:block; }
   transition:transform .15s;
 }
 html[lang="en"] .tb-btn{ font-family:'Inter',sans-serif; }
+html[lang="ja"] .tb-btn{ font-family:'Noto Sans JP',sans-serif; }
 .tb-btn:active{ transform:scale(0.97); }
 .tb-btn.loading{ opacity:0.7; pointer-events:none; }
 .tb-btn.alt{
@@ -174,6 +182,12 @@ html[lang="en"] .tb-btn{ font-family:'Inter',sans-serif; }
   letter-spacing:0.5px; font-style:italic;
   margin-bottom:1px;
 }
+.bismillah-ja{
+  font-family:'Noto Sans JP',sans-serif;
+  font-size:9.5px; color:var(--gold3);
+  letter-spacing:0.3px;
+  margin-bottom:1px;
+}
 
 .mname{
   font-family:'Reem Kufi','Amiri',serif;
@@ -185,8 +199,13 @@ html[lang="en"] .mname{
   font-family:'Playfair Display',serif;
   font-size:30px; letter-spacing:2px;
 }
+html[lang="ja"] .mname{
+  font-family:'Noto Serif JP',serif;
+  font-size:32px; font-weight:900; letter-spacing:2px;
+}
 .mloc{ font-size:10.5px; color:var(--gold2); margin-top:3px; letter-spacing:0.3px; }
 html[lang="en"] .mloc{ font-family:'Inter',sans-serif; }
+html[lang="ja"] .mloc{ font-family:'Noto Sans JP',sans-serif; }
 
 .hdr-rule{
   display:flex; align-items:center; justify-content:center;
@@ -211,9 +230,12 @@ html[lang="en"] .mloc{ font-family:'Inter',sans-serif; }
   color:var(--g1); line-height:1.15;
 }
 html[lang="en"] .badge-main{ font-family:'Inter',sans-serif; font-size:11px; }
+html[lang="ja"] .badge-main{ font-family:'Noto Sans JP',sans-serif; font-size:11px; }
 .badge-sub{ font-size:8.5px; color:#3a1a00; line-height:1.3; }
 html[lang="en"] .badge-top,
 html[lang="en"] .badge-sub{ font-family:'Inter',sans-serif; }
+html[lang="ja"] .badge-top,
+html[lang="ja"] .badge-sub{ font-family:'Noto Sans JP',sans-serif; }
 
 /* ═══════════════════════════════════════════════════════════════════════
    6.  GENERIC DIVIDERS & SECTION HEADERS
@@ -244,6 +266,7 @@ html[lang="en"] .badge-sub{ font-family:'Inter',sans-serif; }
 }
 .ribbon p{ font-family:'Amiri',serif; font-size:12px; font-weight:700; color:var(--g1); }
 html[lang="en"] .ribbon p{ font-family:'Inter',sans-serif; font-size:11.5px; }
+html[lang="ja"] .ribbon p{ font-family:'Noto Sans JP',sans-serif; font-size:11.5px; }
 
 .sec{
   background:linear-gradient(90deg,var(--g1),var(--g2),var(--g1));
@@ -272,6 +295,7 @@ html[lang="en"] .sec span{
   color:var(--ink); text-align:justify;
 }
 html[lang="en"] .story p{ font-family:'Inter',sans-serif; font-size:11.5px; line-height:1.5; }
+html[lang="ja"] .story p{ font-family:'Noto Sans JP',sans-serif; font-size:11.5px; line-height:1.5; }
 .story-hl{
   margin-top:4px; padding:5px 9px;
   background:linear-gradient(135deg,rgba(200,146,30,0.12),rgba(200,146,30,0.05));
@@ -314,7 +338,10 @@ html[lang="en"] .story-hl{
 .lc-sub{ font-size:9px; color:var(--g2); line-height:1.2; }
 html[lang="en"] .lc-label,
 html[lang="en"] .lc-sub{ font-family:'Inter',sans-serif; }
+html[lang="ja"] .lc-label,
+html[lang="ja"] .lc-sub{ font-family:'Noto Sans JP',sans-serif; }
 html[lang="en"] .lc-value{ font-family:'Inter',sans-serif; font-size:12px; }
+html[lang="ja"] .lc-value{ font-family:'Noto Sans JP',sans-serif; font-size:12px; }
 
 /* ═══════════════════════════════════════════════════════════════════════
    9.  FINANCIAL SECTION (agreed amount, stats, progress, deadline)
@@ -343,6 +370,9 @@ html[lang="en"] .lc-value{ font-family:'Inter',sans-serif; font-size:12px; }
 html[lang="en"] .agreed-lbl,
 html[lang="en"] .agreed-amt,
 html[lang="en"] .agreed-sub{ font-family:'Inter',sans-serif; }
+html[lang="ja"] .agreed-lbl,
+html[lang="ja"] .agreed-amt,
+html[lang="ja"] .agreed-sub{ font-family:'Noto Sans JP',sans-serif; }
 
 .stats3{ display:grid; grid-template-columns:repeat(3,1fr); gap:5px; margin-bottom:6px; }
 .sc{
@@ -369,6 +399,8 @@ html[lang="en"] .agreed-sub{ font-family:'Inter',sans-serif; }
 }
 html[lang="en"] .sc .sn,
 html[lang="en"] .sc .sl{ font-family:'Inter',sans-serif; }
+html[lang="ja"] .sc .sn,
+html[lang="ja"] .sc .sl{ font-family:'Noto Sans JP',sans-serif; }
 
 .prog-row{ margin-bottom:5px; }
 .prog-lbls{
@@ -376,6 +408,7 @@ html[lang="en"] .sc .sl{ font-family:'Inter',sans-serif; }
   font-size:9.5px; margin-bottom:2px;
 }
 html[lang="en"] .prog-lbls{ font-family:'Inter',sans-serif; }
+html[lang="ja"] .prog-lbls{ font-family:'Noto Sans JP',sans-serif; }
 .prog-lbls .pl{ color:var(--g3); font-weight:700; }
 .prog-lbls .pr{ color:var(--red); font-weight:700; }
 .prog-track{
@@ -397,6 +430,7 @@ html[lang="en"] .prog-lbls{ font-family:'Inter',sans-serif; }
   color:#FFE0C0; line-height:1.55;
 }
 html[lang="en"] .deadline .dl-t{ font-family:'Inter',sans-serif; font-size:10px; }
+html[lang="ja"] .deadline .dl-t{ font-family:'Noto Sans JP',sans-serif; font-size:10px; }
 .deadline .dl-t strong{ color:#FFD580; }
 
 /* ═══════════════════════════════════════════════════════════════════════
@@ -419,6 +453,7 @@ html[lang="en"] .deadline .dl-t{ font-family:'Inter',sans-serif; font-size:10px;
   font-family:'Amiri',serif; font-size:11px; color:var(--gold3);
 }
 html[lang="en"] .cta-intro{ font-family:'Inter',sans-serif; font-size:10.5px; }
+html[lang="ja"] .cta-intro{ font-family:'Noto Sans JP',sans-serif; font-size:10.5px; }
 .cta-intro strong{ color:var(--gold2); }
 
 .cta-row{
@@ -480,6 +515,7 @@ html[lang="en"] .cta-intro{ font-family:'Inter',sans-serif; font-size:10.5px; }
   text-transform:uppercase;
 }
 html[lang="en"] .cta-tap-hint{ font-family:'Inter',sans-serif; }
+html[lang="ja"] .cta-tap-hint{ font-family:'Noto Sans JP',sans-serif; }
 
 .cta-btn-icon{ font-size:18px; line-height:1; }
 .cta-btn-main{
@@ -488,6 +524,7 @@ html[lang="en"] .cta-tap-hint{ font-family:'Inter',sans-serif; }
   color:var(--g1); line-height:1.15; letter-spacing:0.3px;
 }
 html[lang="en"] .cta-btn-main{ font-family:'Inter',sans-serif; font-size:13.5px; }
+html[lang="ja"] .cta-btn-main{ font-family:'Noto Sans JP',sans-serif; font-size:13.5px; }
 .cta-btn-platform{
   margin-top:1px;
   font-size:9.5px; font-weight:700; color:#3a1a00; letter-spacing:0.5px;
@@ -498,6 +535,8 @@ html[lang="en"] .cta-btn-main{ font-family:'Inter',sans-serif; font-size:13.5px;
 }
 html[lang="en"] .cta-btn-platform,
 html[lang="en"] .cta-btn-sub{ font-family:'Inter',sans-serif; }
+html[lang="ja"] .cta-btn-platform,
+html[lang="ja"] .cta-btn-sub{ font-family:'Noto Sans JP',sans-serif; }
 
 /* "OR" divider between button and QR */
 .cta-or{
@@ -512,6 +551,7 @@ html[lang="en"] .cta-btn-sub{ font-family:'Inter',sans-serif; }
   font-size:9px; color:var(--gold2); font-weight:700; letter-spacing:1px;
 }
 html[lang="en"] .cta-or-text{ font-family:'Inter',sans-serif; }
+html[lang="ja"] .cta-or-text{ font-family:'Noto Sans JP',sans-serif; }
 
 /* QR code box (CTA section) */
 .cta-qr{
@@ -531,6 +571,7 @@ html[lang="en"] .cta-or-text{ font-family:'Inter',sans-serif; }
   line-height:1.1; letter-spacing:0.3px; text-align:center;
 }
 html[lang="en"] .cta-qr-lbl{ font-family:'Inter',sans-serif; }
+html[lang="ja"] .cta-qr-lbl{ font-family:'Noto Sans JP',sans-serif; }
 
 /* ═══════════════════════════════════════════════════════════════════════
    11.  HERO (project total + cost split)
@@ -552,17 +593,20 @@ html[lang="en"] .cta-qr-lbl{ font-family:'Inter',sans-serif; }
   border-radius:18px; border:1px solid var(--gold3);
 }
 html[lang="en"] .hero-pill{ font-family:'Inter',sans-serif; }
+html[lang="ja"] .hero-pill{ font-family:'Noto Sans JP',sans-serif; }
 .hero-amt{
   position:relative; z-index:1; display:block; line-height:1;
   font-family:'Amiri',serif; font-size:34px; font-weight:700; color:var(--gold2);
   text-shadow:0 2px 12px rgba(0,0,0,0.5);
 }
 html[lang="en"] .hero-amt{ font-family:'Inter',sans-serif; }
+html[lang="ja"] .hero-amt{ font-family:'Noto Sans JP',sans-serif; }
 .hero-sub{
   position:relative; z-index:1; margin-top:2px;
   font-size:10.5px; color:rgba(255,255,255,0.7);
 }
 html[lang="en"] .hero-sub{ font-family:'Inter',sans-serif; }
+html[lang="ja"] .hero-sub{ font-family:'Noto Sans JP',sans-serif; }
 
 .cost-split{
   background:var(--cream2); padding:5px 14px;
@@ -576,7 +620,9 @@ html[lang="en"] .hero-sub{ font-family:'Inter',sans-serif; }
 .cost-item .ci-l{ font-family:'Amiri',serif; font-size:10.5px; color:var(--ink); }
 .cost-item .ci-v{ font-size:10.5px; font-weight:700; color:var(--g1); direction:ltr; }
 html[lang="en"] .cost-item .ci-l{ font-family:'Inter',sans-serif; font-size:10px; }
+html[lang="ja"] .cost-item .ci-l{ font-family:'Noto Sans JP',sans-serif; font-size:10px; }
 html[lang="en"] .cost-item .ci-v{ font-family:'Inter',sans-serif; }
+html[lang="ja"] .cost-item .ci-v{ font-family:'Noto Sans JP',sans-serif; }
 
 /* ═══════════════════════════════════════════════════════════════════════
    12.  ACTIVITIES (3 cards)
@@ -599,6 +645,7 @@ html[lang="en"] .cost-item .ci-v{ font-family:'Inter',sans-serif; }
 .act .ai{ display:block; margin-bottom:1px; font-size:16px; }
 .act .al{ font-family:'Amiri',serif; font-size:10.5px; font-weight:700; color:var(--g1); line-height:1.35; }
 html[lang="en"] .act .al{ font-family:'Inter',sans-serif; font-size:10px; }
+html[lang="ja"] .act .al{ font-family:'Noto Sans JP',sans-serif; font-size:10px; }
 
 /* ═══════════════════════════════════════════════════════════════════════
    13.  SHARE INVITATION
@@ -620,7 +667,9 @@ html[lang="en"] .act .al{ font-family:'Inter',sans-serif; font-size:10px; }
 .share-t1{ font-family:'Amiri',serif; font-size:12px; font-weight:700; color:var(--gold3); line-height:1.2; }
 .share-t2{ margin-top:1px; font-size:9.5px; color:rgba(255,255,255,0.7); line-height:1.4; }
 html[lang="en"] .share-t1{ font-family:'Inter',sans-serif; font-size:11.5px; }
+html[lang="ja"] .share-t1{ font-family:'Noto Sans JP',sans-serif; font-size:11.5px; }
 html[lang="en"] .share-t2{ font-family:'Inter',sans-serif; }
+html[lang="ja"] .share-t2{ font-family:'Noto Sans JP',sans-serif; }
 
 /* ═══════════════════════════════════════════════════════════════════════
    14.  DUA / HADITH BOX
@@ -631,6 +680,7 @@ html[lang="en"] .share-t2{ font-family:'Inter',sans-serif; }
   font-family:'Amiri',serif; font-size:10.5px; color:var(--ink); line-height:1.55;
 }
 html[lang="en"] .dua-intro{ font-family:'Inter',sans-serif; font-size:10px; font-style:italic; }
+html[lang="ja"] .dua-intro{ font-family:'Noto Sans JP',sans-serif; font-size:10px; font-style:italic; }
 .dua-box{
   position:relative; overflow:hidden;
   padding:7px 10px 6px; text-align:center;
@@ -657,10 +707,16 @@ html[lang="en"] .dua-intro{ font-family:'Inter',sans-serif; font-size:10px; font
   font-family:'Inter',sans-serif; font-size:10px; font-style:italic;
   color:var(--gold3); line-height:1.4; direction:ltr;
 }
+.dua-hadith-tr.txt-ja{
+  font-family:'Noto Sans JP',sans-serif; font-style:normal;
+}
 .dua-hadith-src{
   display:block; margin-top:1px;
   font-family:'Inter',sans-serif; font-size:8.5px;
   color:rgba(247,229,165,0.6); direction:ltr;
+}
+.dua-hadith-src.txt-ja{
+  font-family:'Noto Sans JP',sans-serif;
 }
 .dua-main{
   position:relative; z-index:1;
@@ -668,11 +724,13 @@ html[lang="en"] .dua-intro{ font-family:'Inter',sans-serif; font-size:10px; font
   color:#d0ead4; line-height:1.55;
 }
 html[lang="en"] .dua-main{ font-family:'Inter',sans-serif; font-size:10px; }
+html[lang="ja"] .dua-main{ font-family:'Noto Sans JP',sans-serif; font-size:10px; }
 .dua-end{
   position:relative; z-index:1; margin-top:4px;
   font-family:'Amiri',serif; font-size:13px; font-weight:700; color:var(--gold2);
 }
 html[lang="en"] .dua-end{ font-family:'Inter',sans-serif; font-size:12px; letter-spacing:0.5px; }
+html[lang="ja"] .dua-end{ font-family:'Noto Sans JP',sans-serif; font-size:12px; letter-spacing:0.5px; }
 
 /* ═══════════════════════════════════════════════════════════════════════
    15.  FOOTER (3 columns: bank / contact / online donate)
@@ -701,6 +759,7 @@ html[lang="en"] .fc-head-t{
   font-size:9.5px; color:rgba(255,255,255,0.82);
 }
 html[lang="en"] .fcl{ font-family:'Inter',sans-serif; text-align:left; }
+html[lang="ja"] .fcl{ font-family:'Noto Sans JP',sans-serif; text-align:left; }
 .fcl.bold{ color:var(--gold2); font-weight:700; font-size:10px; }
 .fcl.ltr{ direction:ltr; text-align:left; font-size:9px; }
 .fcl.email{
@@ -726,6 +785,7 @@ html[lang="en"] .fcl{ font-family:'Inter',sans-serif; text-align:left; }
   color:var(--gold2); line-height:1.3; text-align:center;
 }
 html[lang="en"] .fc-online-lbl{ font-family:'Inter',sans-serif; font-size:9px; }
+html[lang="ja"] .fc-online-lbl{ font-family:'Noto Sans JP',sans-serif; font-size:9px; }
 .fc-online-platform{
   margin-top:1px;
   font-family:'Inter',sans-serif; font-size:8px;
@@ -780,14 +840,17 @@ html[lang="en"] .fc-online-lbl{ font-family:'Inter',sans-serif; font-size:9px; }
   <button class="tb-btn" id="dlBtn" onclick="downloadPNG()">
     <span class="txt-ar">📥 تحميل كصورة</span>
     <span class="txt-en">📥 Download</span>
+          <span class="txt-ja">📥 ダウンロード</span>
   </button>
   <button class="tb-btn alt" onclick="shareFlyer()">
     <span class="txt-ar">🔗 مشاركة</span>
     <span class="txt-en">🔗 Share</span>
+          <span class="txt-ja">🔗 共有</span>
   </button>
   <button class="tb-btn alt lang" onclick="toggleLang()">
     <span class="txt-ar">🌐 EN</span>
-    <span class="txt-en">🌐 ع</span>
+    <span class="txt-en">🌐 日本語</span>
+    <span class="txt-ja">🌐 ع</span>
   </button>
 </div>
 
@@ -849,13 +912,16 @@ html[lang="en"] .fc-online-lbl{ font-family:'Inter',sans-serif; font-size:9px; }
       <div class="hdr-center">
         <div class="bismillah">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
         <div class="bismillah-en txt-en">In the Name of Allah, Most Gracious, Most Merciful</div>
+        <div class="bismillah-ja txt-ja">慈悲あまねく慈愛深きアッラーの御名において</div>
         <div class="mname">
           <span class="txt-ar">مسجد إيشيكاوا</span>
           <span class="txt-en">ISHIKAWA MASJID</span>
+          <span class="txt-ja">石川モスク</span>
         </div>
         <div class="mloc">
           <span class="txt-ar">إيشيكاوا — أوكيناوا — اليابان 🇯🇵</span>
           <span class="txt-en">Ishikawa — Okinawa — Japan 🇯🇵</span>
+          <span class="txt-ja">石川 — 沖縄 — 日本 🇯🇵</span>
         </div>
         <div class="hdr-rule"><hr><div class="hdr-diamond"></div><hr></div>
       </div>
@@ -865,14 +931,17 @@ html[lang="en"] .fc-online-lbl{ font-family:'Inter',sans-serif; font-size:9px; }
         <div class="badge-top">
           <span class="txt-ar">ساهم في</span>
           <span class="txt-en">Contribute to</span>
+          <span class="txt-ja">ご協力ください</span>
         </div>
         <span class="badge-main">
           <span class="txt-ar">إكمال<br>المسجد الثاني</span>
           <span class="txt-en">Completing<br>the Second Masjid</span>
+          <span class="txt-ja">2番目のモスク<br>完成のために</span>
         </span>
         <div class="badge-sub">
           <span class="txt-ar">منارة للإسلام<br>في الجزيرة</span>
           <span class="txt-en">A beacon of Islam<br>on the island</span>
+          <span class="txt-ja">島のイスラーム<br>の灯台として</span>
         </div>
       </div>
 
@@ -886,6 +955,7 @@ html[lang="en"] .fc-online-lbl{ font-family:'Inter',sans-serif; font-size:9px; }
     <p>
       <span class="txt-ar">🕌 &nbsp; حملة بناء المسجد الثاني في أوكيناوا — نداء عاجل &nbsp; 🕌</span>
       <span class="txt-en">🕌 &nbsp; Campaign to Build the Second Masjid in Okinawa — Urgent Appeal &nbsp; 🕌</span>
+          <span class="txt-ja">🕌 &nbsp; 沖縄2番目のモスク建設キャンペーン — 緊急のお願い &nbsp; 🕌</span>
     </p>
   </div>
 
@@ -893,9 +963,11 @@ html[lang="en"] .fc-online-lbl{ font-family:'Inter',sans-serif; font-size:9px; }
   <div class="story">
     <p class="txt-ar block">مسجد إيشيكاوا يقع في وسط جزيرة أوكيناوا — اليابان. والتي يبلغ عدد سكانها حوالي <strong>1.5 مليون نسمة</strong>، ويُقدَّر عدد المسلمين فيها بـ <strong>2,000–3,000 شخص</strong>.</p>
     <p class="txt-en block">Ishikawa Masjid is located in the heart of Okinawa Island, Japan. The island has a population of approximately <strong>1.5 million</strong>, with an estimated <strong>2,000–3,000 Muslims</strong> living among them.</p>
+    <p class="txt-ja block">石川モスクは沖縄島の中心部に位置しています。島の人口は約<strong>150万人</strong>で、その中で<strong>2,000〜3,000人</strong>のムスリムが暮らしていると推定されます。</p>
     <div class="story-hl">
       <span class="txt-ar">لا يوجد في الجزيرة سوى مسجد واحد صغير في ناها. نحن بصدد بناء <strong>المسجد الثاني</strong> في إيشيكاوا — على بُعد <strong>30 كم</strong> عن مسجد ناها.</span>
       <span class="txt-en">There is currently only one small masjid on the island, located in Naha. We are now building the <strong>second masjid</strong> in Ishikawa — about <strong>30 km</strong> away from Naha Masjid.</span>
+          <span class="txt-ja">沖縄島には現在、那覇市に小さなモスクが1つあるだけです。私たちは石川に<strong>2番目のモスク</strong>を建設しています — 那覇モスクから約<strong>30 km</strong>離れた場所にあります。</span>
     </div>
   </div>
 
@@ -903,6 +975,7 @@ html[lang="en"] .fc-online-lbl{ font-family:'Inter',sans-serif; font-size:9px; }
   <div class="sec">
     <span class="txt-ar">مساحة الأرض والوضع الحالي</span>
     <span class="txt-en">Land Area & Current Status</span>
+          <span class="txt-ja">土地面積と現状</span>
   </div>
   <div class="land">
     <div class="land-card">
@@ -911,14 +984,17 @@ html[lang="en"] .fc-online-lbl{ font-family:'Inter',sans-serif; font-size:9px; }
         <div class="lc-label">
           <span class="txt-ar">المساحة الإجمالية</span>
           <span class="txt-en">Total Area</span>
+          <span class="txt-ja">総面積</span>
         </div>
         <div class="lc-value">
           <span class="txt-ar">74 تسوبو (坪)</span>
           <span class="txt-en">74 Tsubo (坪)</span>
+          <span class="txt-ja">74 坪</span>
         </div>
         <div class="lc-sub">
           <span class="txt-ar">≈ 245–250 م²</span>
           <span class="txt-en">≈ 245–250 m²</span>
+          <span class="txt-ja">≈ 245–250 m²</span>
         </div>
       </div>
     </div>
@@ -928,14 +1004,17 @@ html[lang="en"] .fc-online-lbl{ font-family:'Inter',sans-serif; font-size:9px; }
         <div class="lc-label">
           <span class="txt-ar">الوضع الحالي</span>
           <span class="txt-en">Current Status</span>
+          <span class="txt-ja">現状</span>
         </div>
         <div class="lc-value">
           <span class="txt-ar">مصلى صغير</span>
           <span class="txt-en">Small Prayer Hall</span>
+          <span class="txt-ja">小さな礼拝室</span>
         </div>
         <div class="lc-sub">
           <span class="txt-ar">والباقي ينتظر البناء</span>
           <span class="txt-en">Rest awaiting construction</span>
+          <span class="txt-ja">残りは建設待ち</span>
         </div>
       </div>
     </div>
@@ -945,6 +1024,7 @@ html[lang="en"] .fc-online-lbl{ font-family:'Inter',sans-serif; font-size:9px; }
   <div class="sec">
     <span class="txt-ar">تفاصيل شراء أرض المسجد</span>
     <span class="txt-en">Land Purchase Details</span>
+          <span class="txt-ja">土地購入の詳細</span>
   </div>
   <div class="fin">
 
@@ -954,14 +1034,17 @@ html[lang="en"] .fc-online-lbl{ font-family:'Inter',sans-serif; font-size:9px; }
         <div class="agreed-lbl">
           <span class="txt-ar">تم الاتفاق على الشراء عام 2024 بمبلغ:</span>
           <span class="txt-en">Purchase agreed in 2024 for:</span>
+          <span class="txt-ja">2024年に購入合意:</span>
         </div>
         <div class="agreed-amt">
           <span class="txt-ar">120,400 دولار</span>
           <span class="txt-en">$120,400 USD</span>
+          <span class="txt-ja">$120,400 USD</span>
         </div>
         <div class="agreed-sub">
           <span class="txt-ar">يُسدَّد خلال سنة واحدة</span>
           <span class="txt-en">To be paid within one year</span>
+          <span class="txt-ja">1年以内に支払い</span>
         </div>
       </div>
     </div>
@@ -972,6 +1055,7 @@ html[lang="en"] .fc-online-lbl{ font-family:'Inter',sans-serif; font-size:9px; }
         <span class="sl">
           <span class="txt-ar">المبلغ الإجمالي للأرض</span>
           <span class="txt-en">Total Land Amount</span>
+          <span class="txt-ja">土地総額</span>
         </span>
       </div>
       <div class="sc sc2">
@@ -979,6 +1063,7 @@ html[lang="en"] .fc-online-lbl{ font-family:'Inter',sans-serif; font-size:9px; }
         <span class="sl">
           <span class="txt-ar">المبلغ المدفوع</span>
           <span class="txt-en">Amount Paid</span>
+          <span class="txt-ja">支払済み額</span>
         </span>
       </div>
       <div class="sc sc3">
@@ -986,6 +1071,7 @@ html[lang="en"] .fc-online-lbl{ font-family:'Inter',sans-serif; font-size:9px; }
         <span class="sl">
           <span class="txt-ar">المبلغ المتبقي</span>
           <span class="txt-en">Amount Remaining</span>
+          <span class="txt-ja">残金</span>
         </span>
       </div>
     </div>
@@ -995,10 +1081,12 @@ html[lang="en"] .fc-online-lbl{ font-family:'Inter',sans-serif; font-size:9px; }
         <span class="pl">
           <span class="txt-ar">✅ 47.7% تم جمعه</span>
           <span class="txt-en">✅ 47.7% Raised</span>
+          <span class="txt-ja">✅ 47.7% 達成</span>
         </span>
         <span class="pr">
           <span class="txt-ar">⏳ 52.3% متبقي</span>
           <span class="txt-en">⏳ 52.3% Remaining</span>
+          <span class="txt-ja">⏳ 52.3% 不足</span>
         </span>
       </div>
       <div class="prog-track"><div class="pf"></div><div class="pe"></div></div>
@@ -1009,6 +1097,7 @@ html[lang="en"] .fc-online-lbl{ font-family:'Inter',sans-serif; font-size:9px; }
       <div class="dl-t">
         <span class="txt-ar">المهلة حتى نهاية <strong>يوليو 2026</strong> — وإلا يُلغى العقد وتُفقد <strong>28,700 دولار</strong>. كل مبلغ تتبرع به، مهما كان صغيراً، يُقرِّبنا من الهدف.</span>
         <span class="txt-en">Deadline by end of <strong>July 2026</strong> — otherwise the contract will be cancelled and <strong>$28,700</strong> already paid will be lost. Every donation, no matter how small, brings us closer to the goal.</span>
+          <span class="txt-ja">期限は<strong>2026年7月末</strong>まで — それまでに完了しない場合、契約は解除され、すでに支払った<strong>$28,700</strong>が失われます。どんな小さな寄付でも、目標達成に近づきます。</span>
       </div>
     </div>
 
@@ -1019,25 +1108,30 @@ html[lang="en"] .fc-online-lbl{ font-family:'Inter',sans-serif; font-size:9px; }
     <div class="cta-intro">
       <span class="txt-ar">💝 <strong>تبرّع الآن</strong> — اضغط على الزر أو امسح الرمز</span>
       <span class="txt-en">💝 <strong>Donate Now</strong> — tap the button or scan the QR code</span>
+          <span class="txt-ja">💝 <strong>今すぐ寄付</strong> — ボタンをタップまたはQRコードをスキャン</span>
     </div>
     <div class="cta-row">
       <a class="cta-btn" href="https://www.launchgood.com/v4/campaign/save_ishikawa_masjid_the_only_house_of_allah_in_central_okinawa?src=6784436" target="_blank" rel="noopener">
         <span class="cta-tap-hint">
           <span class="txt-ar">👆 اضغط هنا</span>
           <span class="txt-en">👆 TAP HERE</span>
+          <span class="txt-ja">👆 ここをタップ</span>
         </span>
         <div class="cta-btn-icon">🤲</div>
         <div class="cta-btn-main">
           <span class="txt-ar">تبرّع الآن</span>
           <span class="txt-en">Donate Now</span>
+          <span class="txt-ja">今すぐ寄付</span>
         </div>
         <div class="cta-btn-platform">
           <span class="txt-ar">عبر LaunchGood</span>
           <span class="txt-en">via LaunchGood</span>
+          <span class="txt-ja">LaunchGoodで</span>
         </div>
         <div class="cta-btn-sub">
           <span class="txt-ar">آمن وموثوق • متابعة مباشرة</span>
           <span class="txt-en">Secure & trusted • Live tracking</span>
+          <span class="txt-ja">安全・信頼できる • リアルタイム追跡</span>
         </div>
       </a>
       <div class="cta-or">
@@ -1045,6 +1139,7 @@ html[lang="en"] .fc-online-lbl{ font-family:'Inter',sans-serif; font-size:9px; }
         <div class="cta-or-text">
           <span class="txt-ar">أو</span>
           <span class="txt-en">OR</span>
+          <span class="txt-ja">または</span>
         </div>
         <div class="cta-or-line"></div>
       </div>
@@ -1053,6 +1148,7 @@ html[lang="en"] .fc-online-lbl{ font-family:'Inter',sans-serif; font-size:9px; }
         <div class="cta-qr-lbl">
           <span class="txt-ar">📱 امسح للتبرع</span>
           <span class="txt-en">📱 SCAN TO DONATE</span>
+          <span class="txt-ja">📱 スキャンして寄付</span>
         </div>
       </div>
     </div>
@@ -1062,17 +1158,20 @@ html[lang="en"] .fc-online-lbl{ font-family:'Inter',sans-serif; font-size:9px; }
   <div class="sec">
     <span class="txt-ar">خطة المشروع الكاملة (الأرض + البناء)</span>
     <span class="txt-en">Full Project Plan (Land + Construction)</span>
+          <span class="txt-ja">プロジェクト全体計画（土地＋建設）</span>
   </div>
   <div class="hero">
     <div class="hero-pat"></div>
     <div class="hero-pill">
       <span class="txt-ar">✨ المبلغ الإجمالي الكامل للمشروع</span>
       <span class="txt-en">✨ Total Full Project Amount</span>
+          <span class="txt-ja">✨ プロジェクト総額</span>
     </div>
     <span class="hero-amt">~$250,000</span>
     <div class="hero-sub">
       <span class="txt-ar">يشمل الأرض + بناء المسجد المتكامل</span>
       <span class="txt-en">Includes the land + full masjid construction</span>
+          <span class="txt-ja">土地＋モスク建設費を含む</span>
     </div>
   </div>
   <div class="cost-split">
@@ -1080,6 +1179,7 @@ html[lang="en"] .fc-online-lbl{ font-family:'Inter',sans-serif; font-size:9px; }
       <span class="ci-l">
         <span class="txt-ar">🗺️ تكلفة الأرض المتبقية</span>
         <span class="txt-en">🗺️ Remaining Land Cost</span>
+          <span class="txt-ja">🗺️ 残りの土地代</span>
       </span>
       <span class="ci-v">$62K–$65K</span>
     </div>
@@ -1087,6 +1187,7 @@ html[lang="en"] .fc-online-lbl{ font-family:'Inter',sans-serif; font-size:9px; }
       <span class="ci-l">
         <span class="txt-ar">🏗 بناء المسجد</span>
         <span class="txt-en">🏗 Masjid Construction</span>
+          <span class="txt-ja">🏗 モスク建設費</span>
       </span>
       <span class="ci-v">$155K–$190K</span>
     </div>
@@ -1096,6 +1197,7 @@ html[lang="en"] .fc-online-lbl{ font-family:'Inter',sans-serif; font-size:9px; }
   <div class="sec">
     <span class="txt-ar">تم الاستفادة من المسجد بشكل كامل خلال هذا العام</span>
     <span class="txt-en">The Masjid Has Been Fully Utilized This Year</span>
+          <span class="txt-ja">今年、モスクは十分に活用されました</span>
   </div>
   <div class="acts">
     <div class="act">
@@ -1103,6 +1205,7 @@ html[lang="en"] .fc-online-lbl{ font-family:'Inter',sans-serif; font-size:9px; }
       <div class="al">
         <span class="txt-ar">إقامة<br><strong>الصلوات اليومية</strong></span>
         <span class="txt-en">Establishing<br><strong>Daily Prayers</strong></span>
+          <span class="txt-ja"><strong>毎日の礼拝</strong><br>の実施</span>
       </div>
     </div>
     <div class="act">
@@ -1110,6 +1213,7 @@ html[lang="en"] .fc-online-lbl{ font-family:'Inter',sans-serif; font-size:9px; }
       <div class="al">
         <span class="txt-ar">صلاة<br><strong>التراويح في رمضان</strong></span>
         <span class="txt-en"><strong>Taraweeh Prayers</strong><br>in Ramadan</span>
+          <span class="txt-ja">ラマダン月の<br><strong>タラーウィーフ礼拝</strong></span>
       </div>
     </div>
     <div class="act">
@@ -1117,6 +1221,7 @@ html[lang="en"] .fc-online-lbl{ font-family:'Inter',sans-serif; font-size:9px; }
       <div class="al">
         <span class="txt-ar">حلقات تحفيظ القرآن<br><strong>للأطفال</strong></span>
         <span class="txt-en">Quran Memorization<br><strong>for Children</strong></span>
+          <span class="txt-ja"><strong>子供向け</strong><br>クルアーン暗誦クラス</span>
       </div>
     </div>
   </div>
@@ -1128,10 +1233,12 @@ html[lang="en"] .fc-online-lbl{ font-family:'Inter',sans-serif; font-size:9px; }
       <div class="share-t1">
         <span class="txt-ar">شارك هذه المبادرة مع أصدقائك وأحبتّك</span>
         <span class="txt-en">Share this initiative with your friends and loved ones</span>
+          <span class="txt-ja">この取り組みをお友達や大切な方々と共有してください</span>
       </div>
       <div class="share-t2">
         <span class="txt-ar">لينالوا أجر هذه الصدقة الجارية بإذن الله، إذ لا يوجد مسجد في هذه البلدة.</span>
         <span class="txt-en">So they may earn the reward of this ongoing charity (Sadaqah Jariyah), as there is no masjid in this town.</span>
+          <span class="txt-ja">この町にはモスクがないため、皆様も永続的な善行（サダカ・ジャーリヤ）の報奨を得られますように。</span>
       </div>
     </div>
   </div>
@@ -1141,6 +1248,7 @@ html[lang="en"] .fc-online-lbl{ font-family:'Inter',sans-serif; font-size:9px; }
     <div class="dua-intro">
       <span class="txt-ar">نسأل الله أن ييسر لنا جمع هذا المبلغ، وأن يبقى هذا المسجد منارةً لخدمة الإسلام والمسلمين في هذه الجزيرة الجميلة.</span>
       <span class="txt-en">We ask Allah to make it easy for us to raise this amount, and that this masjid remains a beacon serving Islam and Muslims on this beautiful island.</span>
+          <span class="txt-ja">アッラーがこの金額の調達を容易にしてくださり、このモスクがこの美しい島でイスラームとムスリムのための灯台となりますように。</span>
     </div>
     <div class="dua-box">
       <div class="dua-box-pat"></div>
@@ -1148,14 +1256,18 @@ html[lang="en"] .fc-online-lbl{ font-family:'Inter',sans-serif; font-size:9px; }
         « مَنْ بَنَى مَسْجِدًا لِلَّهِ بَنَى اللَّهُ لَهُ بَيْتًا فِي الْجَنَّةِ »
         <span class="dua-hadith-tr txt-en">"Whoever builds a masjid for Allah, Allah will build for him a house in Paradise."</span>
         <span class="dua-hadith-src txt-en">— Reported by Bukhari & Muslim</span>
+        <span class="dua-hadith-tr txt-ja">「アッラーのためにモスクを建てる者には、アッラーは天国に家を建てて下さる」</span>
+        <span class="dua-hadith-src txt-ja">— ブハーリーとムスリムによる伝承</span>
       </div>
       <div class="dua-main">
         <span class="txt-ar">نسأل الله أن يجزيكم خير الجزاء على دعمكم،<br>وأن يبني لكم بيتًا في الجنة، كما تساهمون في بناء بيت من بيوته في الدنيا.</span>
         <span class="txt-en">May Allah reward you abundantly for your support,<br>and build for you a house in Paradise, just as you help build one of His houses in this world.</span>
+          <span class="txt-ja">ご支援に対し、アッラーが豊かな報奨をお与えくださいますように。<br>そして、現世で主の家の建設にご協力くださる皆様のため、来世で天国に家をお建てくださいますように。</span>
       </div>
       <div class="dua-end">
         <span class="txt-ar">🤲 جزاكم الله خيراً</span>
         <span class="txt-en">🤲 Jazakum Allahu Khairan</span>
+          <span class="txt-ja">🤲 ジャザークム・アッラーフ・ハイラン（アッラーの報奨が皆様にありますように）</span>
       </div>
     </div>
   </div>
@@ -1171,6 +1283,7 @@ html[lang="en"] .fc-online-lbl{ font-family:'Inter',sans-serif; font-size:9px; }
         <span class="fc-head-t">
           <span class="txt-ar">تفاصيل التبرع</span>
           <span class="txt-en">Donation</span>
+          <span class="txt-ja">銀行振込</span>
         </span>
       </div>
       <div class="fc-body">
@@ -1178,18 +1291,22 @@ html[lang="en"] .fc-online-lbl{ font-family:'Inter',sans-serif; font-size:9px; }
         <span class="fcl">
           <span class="txt-ar">الفرع: Ishikawa</span>
           <span class="txt-en">Branch: Ishikawa</span>
+          <span class="txt-ja">支店：石川</span>
         </span>
         <span class="fcl">
           <span class="txt-ar">رقم الفرع: 315</span>
           <span class="txt-en">Branch No: 315</span>
+          <span class="txt-ja">支店番号：315</span>
         </span>
         <span class="fcl">
           <span class="txt-ar">نوع الحساب: Futsu</span>
           <span class="txt-en">Account Type: Futsu</span>
+          <span class="txt-ja">口座種別：普通</span>
         </span>
         <span class="fcl">
           <span class="txt-ar">رقم الحساب: 1776257</span>
           <span class="txt-en">Account No: 1776257</span>
+          <span class="txt-ja">口座番号：1776257</span>
         </span>
         <span class="fcl bold ltr">ISHIKAWA MASJID</span>
         <span class="fcl ltr">HASSAN A. MILAD</span>
@@ -1203,17 +1320,20 @@ html[lang="en"] .fc-online-lbl{ font-family:'Inter',sans-serif; font-size:9px; }
         <span class="fc-head-t">
           <span class="txt-ar">للتواصل</span>
           <span class="txt-en">Contact</span>
+          <span class="txt-ja">お問い合わせ</span>
         </span>
       </div>
       <div class="fc-body">
         <span class="fcl bold">
           <span class="txt-ar">أحمد ميلاد</span>
           <span class="txt-en">Ahmad Milad</span>
+          <span class="txt-ja">アフマド・ミラード</span>
         </span>
         <span class="fcl ltr">+81 80 9853 8815</span>
         <span class="fcl bold">
           <span class="txt-ar">مير أحمد</span>
           <span class="txt-en">Mir Ahmad</span>
+          <span class="txt-ja">ミール・アフマド</span>
         </span>
         <span class="fcl ltr">+81 90 6422 0786</span>
         <a href="mailto:Ishikawamasjid@gmail.com" class="fcl email">✉ Ishikawamasjid@gmail.com</a>
@@ -1227,6 +1347,7 @@ html[lang="en"] .fc-online-lbl{ font-family:'Inter',sans-serif; font-size:9px; }
         <span class="fc-head-t">
           <span class="txt-ar">تبرّع أونلاين</span>
           <span class="txt-en">Donate Online</span>
+          <span class="txt-ja">オンライン寄付</span>
         </span>
       </div>
       <div class="fc-body fc-online">
@@ -1234,6 +1355,7 @@ html[lang="en"] .fc-online-lbl{ font-family:'Inter',sans-serif; font-size:9px; }
         <div class="fc-online-lbl">
           <span class="txt-ar">امسح للتبرع</span>
           <span class="txt-en">Scan to Donate</span>
+          <span class="txt-ja">スキャンして寄付</span>
         </div>
         <div class="fc-online-platform">LaunchGood</div>
       </div>
@@ -1255,7 +1377,7 @@ html[lang="en"] .fc-online-lbl{ font-family:'Inter',sans-serif; font-size:9px; }
   ════════════════════════════════════════════════════════════════════ -->
 <!-- QR code generator (works locally, no API call needed) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-<!-- Image-from-DOM libraries: html2canvas (primary) + html-to-image (fallback) -->
+<!-- Image-from-DOM libraries: html-to-image (primary, preserves Arabic shaping) + html2canvas (fallback) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html-to-image@1.11.13/dist/html-to-image.min.js"></script>
 
@@ -1288,19 +1410,24 @@ if (document.readyState === 'loading') {
   generateQRs();
 }
 
-/* ── 2. Language toggle ─────────────────────────────────────────── */
+/* ── 2. Language toggle (cycles ar → en → ja → ar) ──────────────── */
 function toggleLang() {
   const html = document.documentElement;
-  const isAr = html.getAttribute('lang') === 'ar';
-  if (isAr) {
-    html.setAttribute('lang', 'en');
-    html.setAttribute('dir', 'ltr');
-    document.title = 'Ishikawa Masjid — Building the Second Masjid in Okinawa';
+  const current = html.getAttribute('lang') || 'ar';
+  let next, dir, title;
+  if (current === 'ar') {
+    next = 'en'; dir = 'ltr';
+    title = 'Ishikawa Masjid — Building the Second Masjid in Okinawa';
+  } else if (current === 'en') {
+    next = 'ja'; dir = 'ltr';
+    title = '石川モスク — 沖縄2番目のモスク建設キャンペーン';
   } else {
-    html.setAttribute('lang', 'ar');
-    html.setAttribute('dir', 'rtl');
-    document.title = 'مسجد إيشيكاوا — حملة بناء المسجد الثاني في أوكيناوا';
+    next = 'ar'; dir = 'rtl';
+    title = 'مسجد إيشيكاوا — حملة بناء المسجد الثاني في أوكيناوا';
   }
+  html.setAttribute('lang', next);
+  html.setAttribute('dir', dir);
+  document.title = title;
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
@@ -1365,32 +1492,14 @@ async function ensureFontsLoaded() {
   }));
 }
 
-/* ── 5. Capture flyer to PNG (html2canvas → html-to-image fallback) ─ */
+/* ── 5. Capture flyer to PNG (html-to-image first → html2canvas fallback) ─ */
 async function captureFlyer(flyer) {
   const fullW = 560;
   const fullH = flyer.scrollHeight;
   let lastErr;
 
-  // PRIMARY: html2canvas — paints DOM → canvas directly. Most reliable on Chrome Android.
-  if (typeof html2canvas === 'function') {
-    try {
-      const canvas = await html2canvas(flyer, {
-        scale: 2.5,
-        useCORS: true,
-        allowTaint: true,
-        backgroundColor: '#fdf8ee',
-        logging: false,
-        width: fullW, height: fullH,
-        windowWidth: fullW, windowHeight: fullH
-      });
-      return canvas.toDataURL('image/png');
-    } catch(e) {
-      console.warn('html2canvas failed, will try html-to-image:', e);
-      lastErr = e;
-    }
-  }
-
-  // FALLBACK: html-to-image (uses SVG foreignObject — sometimes fails on Chrome Android)
+  // PRIMARY: html-to-image — uses SVG foreignObject which preserves
+  // Arabic letter-joining and ligatures correctly (browser's native rendering)
   if (typeof htmlToImage !== 'undefined' && htmlToImage.toCanvas) {
     const opts = {
       width: fullW, height: fullH,
@@ -1410,23 +1519,54 @@ async function captureFlyer(flyer) {
     try {
       const c = await htmlToImage.toCanvas(flyer, opts);
       return c.toDataURL('image/png');
-    } catch(e) { lastErr = e; }
+    } catch(e) {
+      console.warn('htmlToImage.toCanvas failed:', e);
+      lastErr = e;
+    }
     try { return await htmlToImage.toPng(flyer, opts); }
-    catch(e) { lastErr = e; }
+    catch(e) { console.warn('htmlToImage.toPng failed:', e); lastErr = e; }
     try { return await htmlToImage.toJpeg(flyer, Object.assign({}, opts, { quality: 0.95 })); }
-    catch(e) { lastErr = e; }
+    catch(e) { console.warn('htmlToImage.toJpeg failed:', e); lastErr = e; }
+  }
+
+  // FALLBACK: html2canvas (only used if html-to-image fully fails — e.g. Chrome Android
+  // data:URI bug). Note: html2canvas does NOT properly shape Arabic letters, so this
+  // fallback should be a last resort.
+  if (typeof html2canvas === 'function') {
+    try {
+      const canvas = await html2canvas(flyer, {
+        scale: 2.5,
+        useCORS: true,
+        allowTaint: true,
+        backgroundColor: '#fdf8ee',
+        logging: false,
+        width: fullW, height: fullH,
+        windowWidth: fullW, windowHeight: fullH,
+        foreignObjectRendering: true  // try to preserve native text rendering (incl. Arabic)
+      });
+      return canvas.toDataURL('image/png');
+    } catch(e) {
+      console.warn('html2canvas also failed:', e);
+      lastErr = e;
+    }
   }
 
   throw lastErr || new Error('No capture library available.');
 }
 
 /* ── 6. Format an unknown thrown value into a useful message ────── */
-function describeError(e, isEn) {
+function describeError(e, lang) {
   if (e && e.message) return e.message;
   if (e instanceof Event) {
     const target = e.target;
-    if (target && target.src) return (isEn ? 'Failed to load resource: ' : 'فشل تحميل المورد: ') + target.src;
-    return isEn ? 'A resource failed to load.' : 'فشل تحميل أحد الموارد.';
+    const prefix = lang === 'ja' ? 'リソースの読み込みに失敗しました: '
+                  : lang === 'en' ? 'Failed to load resource: '
+                  : 'فشل تحميل المورد: ';
+    const generic = lang === 'ja' ? 'リソースの読み込みに失敗しました。'
+                  : lang === 'en' ? 'A resource failed to load.'
+                  : 'فشل تحميل أحد الموارد.';
+    if (target && target.src) return prefix + target.src;
+    return generic;
   }
   return String(e || 'Unknown error');
 }
@@ -1434,8 +1574,23 @@ function describeError(e, isEn) {
 /* ── 7. Download the flyer as PNG ───────────────────────────────── */
 async function downloadPNG() {
   const btn = document.getElementById('dlBtn');
-  const isEn = document.documentElement.getAttribute('lang') === 'en';
+  const lang = document.documentElement.getAttribute('lang') || 'ar';
   const flyer = document.getElementById('flyer');
+
+  // i18n strings for status & messages
+  const t = {
+    loadingFonts: lang === 'ja' ? '⏳ フォント読み込み中...' : lang === 'en' ? '⏳ Loading fonts...' : '⏳ جاري تحميل الخطوط...',
+    generating:   lang === 'ja' ? '⏳ 画像生成中...'        : lang === 'en' ? '⏳ Generating image...' : '⏳ إنشاء الصورة...',
+    libErr:       lang === 'ja' ? '画像ライブラリの読み込みに失敗しました。インターネット接続を確認しページを再読み込みしてください。'
+                : lang === 'en' ? 'Image library failed to load. Check your internet and reload the page.'
+                                : 'فشل تحميل مكتبة الصور. تحقق من الاتصال وأعد تحميل الصفحة.',
+    genErr:       lang === 'ja' ? '画像を生成できませんでした。' : lang === 'en' ? 'Could not generate the image.' : 'تعذّر إنشاء الصورة.',
+    errPrefix:    lang === 'ja' ? 'エラー: ' : lang === 'en' ? 'Error: ' : 'حدث خطأ: ',
+    iosMsg:       lang === 'ja' ? '画像を長押しして保存してください' : lang === 'en' ? 'Long-press the image to save it' : 'اضغط مطولاً على الصورة لحفظها',
+    iosTitle:     lang === 'ja' ? '石川モスク' : lang === 'en' ? 'Ishikawa Masjid' : 'مسجد إيشيكاوا',
+    filename:     lang === 'ja' ? 'Ishikawa-Masjid-JP.png' : lang === 'en' ? 'Ishikawa-Masjid.png' : 'مسجد-إيشيكاوا.png',
+    btnDefault:   '<span class="txt-ar">📥 تحميل كصورة</span><span class="txt-en">📥 Download</span><span class="txt-ja">📥 ダウンロード</span>',
+  };
 
   // Snapshot original styles so we ALWAYS restore them in `finally`
   const origStyle = flyer.getAttribute('style') || '';
@@ -1444,86 +1599,76 @@ async function downloadPNG() {
   let swappedQrs = [];
 
   btn.classList.add('loading');
-  btn.innerHTML = isEn ? '⏳ Loading fonts...' : '⏳ جاري تحميل الخطوط...';
+  btn.innerHTML = t.loadingFonts;
 
   try {
-    // Pre-flight check
     const hasH2C = typeof html2canvas === 'function';
     const hasHTI = typeof htmlToImage !== 'undefined' && htmlToImage.toCanvas;
-    if (!hasH2C && !hasHTI) {
-      throw new Error(isEn
-        ? 'Image library failed to load. Check your internet and reload the page.'
-        : 'فشل تحميل مكتبة الصور. تحقق من الاتصال وأعد تحميل الصفحة.');
-    }
+    if (!hasH2C && !hasHTI) throw new Error(t.libErr);
 
     generateQRs();
     await new Promise(function(r){ setTimeout(r, 100); });
     await ensureFontsLoaded();
     await new Promise(function(r){ setTimeout(r, 500); });
 
-    btn.innerHTML = isEn ? '⏳ Generating image...' : '⏳ إنشاء الصورة...';
+    btn.innerHTML = t.generating;
 
-    // Convert canvas QRs to <img> for capture (more reliable)
     swappedQrs = replaceQrCanvasesWithImg();
     await waitForImagesReady(swappedQrs);
 
-    // Lock width and freeze CTA pulse animation during capture
     flyer.setAttribute('style', origStyle + ';width:560px !important;');
     if (ctaBtn) ctaBtn.style.animation = 'none';
     await new Promise(function(r){ setTimeout(r, 300); });
 
     const dataUrl = await captureFlyer(flyer);
     if (!dataUrl || typeof dataUrl !== 'string' || dataUrl.length < 100) {
-      throw new Error(isEn ? 'Could not generate the image.' : 'تعذّر إنشاء الصورة.');
+      throw new Error(t.genErr);
     }
 
-    // Trigger download
-    const filename = isEn ? 'Ishikawa-Masjid.png' : 'مسجد-إيشيكاوا.png';
     const a = document.createElement('a');
-    a.download = filename;
+    a.download = t.filename;
     a.href = dataUrl;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
 
-    // iOS fallback: open image in new tab so user can long-press to save
     if (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream) {
       const tab = window.open();
       if (tab) {
-        const msg = isEn ? 'Long-press the image to save it' : 'اضغط مطولاً على الصورة لحفظها';
-        const ttl = isEn ? 'Ishikawa Masjid' : 'مسجد إيشيكاوا';
         tab.document.write(
-          '<html><head><title>' + ttl + '</title></head>' +
+          '<html><head><title>' + t.iosTitle + '</title></head>' +
           '<body style="margin:0;background:#000;text-align:center;padding:20px;color:#fff;font-family:sans-serif;">' +
-          '<p>' + msg + '</p><img src="' + dataUrl + '" style="max-width:100%;height:auto;"></body></html>'
+          '<p>' + t.iosMsg + '</p><img src="' + dataUrl + '" style="max-width:100%;height:auto;"></body></html>'
         );
       }
     }
 
   } catch(e) {
     console.error('Download error:', e);
-    alert((isEn ? 'Error: ' : 'حدث خطأ: ') + describeError(e, isEn));
+    alert(t.errPrefix + describeError(e, lang));
   } finally {
-    // ALWAYS restore everything (runs even on errors)
     flyer.setAttribute('style', origStyle);
     if (ctaBtn) ctaBtn.style.animation = ctaOrigAnim;
     restoreQrCanvases(swappedQrs);
     btn.classList.remove('loading');
-    btn.innerHTML = '<span class="txt-ar">📥 تحميل كصورة</span><span class="txt-en">📥 Download</span>';
+    btn.innerHTML = t.btnDefault;
   }
 }
 
 /* ── 8. Share via native API or clipboard ───────────────────────── */
 async function shareFlyer() {
-  const isEn = document.documentElement.getAttribute('lang') === 'en';
+  const lang = document.documentElement.getAttribute('lang') || 'ar';
   const url = window.location.href;
-  const title = isEn ? 'Ishikawa Masjid' : 'مسجد إيشيكاوا';
-  const text = isEn
+  const title = lang === 'ja' ? '石川モスク' : lang === 'en' ? 'Ishikawa Masjid' : 'مسجد إيشيكاوا';
+  const text = lang === 'ja'
+    ? '🕌 沖縄県の石川モスク建設キャンペーン\nプロジェクト完成のためご支援をお願いします。\n\n💝 LaunchGoodで寄付: ' + LAUNCHGOOD_URL
+    : lang === 'en'
     ? '🕌 Campaign to build Ishikawa Masjid in Okinawa, Japan\nWe need your help to complete the project.\n\n💝 Donate via LaunchGood: ' + LAUNCHGOOD_URL
     : '🕌 حملة بناء مسجد إيشيكاوا في أوكيناوا - اليابان\nنحتاج لمساعدتكم لإكمال المشروع.\n\n💝 للتبرع عبر LaunchGood: ' + LAUNCHGOOD_URL;
-  const copiedMsg = isEn
-    ? '✅ Link copied — you can now paste and share it'
-    : '✅ تم نسخ الرابط — يمكنك الآن لصقه ومشاركته';
+  const copiedMsg = lang === 'ja' ? '✅ リンクをコピーしました — 貼り付けて共有できます'
+                  : lang === 'en' ? '✅ Link copied — you can now paste and share it'
+                                  : '✅ تم نسخ الرابط — يمكنك الآن لصقه ومشاركته';
+  const linkPrefix = lang === 'ja' ? 'リンク: ' : lang === 'en' ? 'Link: ' : 'الرابط: ';
 
   if (navigator.share) {
     try { await navigator.share({ title: title, text: text, url: url }); } catch(e) {}
@@ -1533,7 +1678,7 @@ async function shareFlyer() {
     await navigator.clipboard.writeText(text + '\n' + url);
     alert(copiedMsg);
   } catch(e) {
-    alert((isEn ? 'Link: ' : 'الرابط: ') + url);
+    alert(linkPrefix + url);
   }
 }
 </script>

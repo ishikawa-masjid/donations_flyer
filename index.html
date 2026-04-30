@@ -60,19 +60,29 @@ body{
 
 /* ═══════════════════════════════════════════════════════════════════════
    2.  LANGUAGE SWITCHING (Arabic ↔ English ↔ Japanese)
+   Use !important + multiple properties so html-to-image's SVG capture
+   reliably hides inactive languages.
    ═══════════════════════════════════════════════════════════════════════ */
 html[lang="en"] body{ font-family:'Inter',sans-serif; }
 html[lang="ja"] body{ font-family:'Noto Sans JP',sans-serif; }
 
-.txt-en, .txt-ja{ display:none; }
-html[lang="en"] .txt-ar, html[lang="en"] .txt-ja{ display:none; }
-html[lang="en"] .txt-en{ display:inline; }
-html[lang="ja"] .txt-ar, html[lang="ja"] .txt-en{ display:none; }
-html[lang="ja"] .txt-ja{ display:inline; }
+/* Default: hide everything except Arabic */
+.txt-en, .txt-ja{ display:none !important; }
 
-html[lang="en"] .txt-en.block,
-html[lang="ja"] .txt-ja.block,
-html[lang="ar"] .txt-ar.block{ display:block; }
+/* English mode */
+html[lang="en"] .txt-ar{ display:none !important; }
+html[lang="en"] .txt-ja{ display:none !important; }
+html[lang="en"] .txt-en{ display:inline !important; }
+html[lang="en"] .txt-en.block{ display:block !important; }
+
+/* Japanese mode */
+html[lang="ja"] .txt-ar{ display:none !important; }
+html[lang="ja"] .txt-en{ display:none !important; }
+html[lang="ja"] .txt-ja{ display:inline !important; }
+html[lang="ja"] .txt-ja.block{ display:block !important; }
+
+/* Arabic mode (default) */
+html[lang="ar"] .txt-ar.block{ display:block !important; }
 
 /* ═══════════════════════════════════════════════════════════════════════
    3.  TOP TOOLBAR (Download / Share / Language)
@@ -1492,66 +1502,119 @@ async function ensureFontsLoaded() {
   }));
 }
 
-/* ── 5. Capture flyer to PNG (html-to-image first → html2canvas fallback) ─ */
+/* ── 5. Capture flyer to PNG (html-to-image first → html2canvas fallback) ─
+
+   Why we capture from a CLONE rather than the live element:
+   - The live flyer is inside a flex-centered body (align-items:center)
+   - With RTL/LTR direction, the capture libraries sometimes get the bounding
+     box wrong and crop the result in half
+   - Cloning into an isolated, top-left-aligned wrapper guarantees a clean,
+     full-frame capture every time
+*/
 async function captureFlyer(flyer) {
   const fullW = 560;
-  const fullH = flyer.scrollHeight;
-  let lastErr;
+  const dir = document.documentElement.getAttribute('dir') || 'rtl';
+  const lang = document.documentElement.getAttribute('lang') || 'ar';
 
-  // PRIMARY: html-to-image — uses SVG foreignObject which preserves
-  // Arabic letter-joining and ligatures correctly (browser's native rendering)
-  if (typeof htmlToImage !== 'undefined' && htmlToImage.toCanvas) {
-    const opts = {
-      width: fullW, height: fullH,
-      pixelRatio: 2.5, cacheBust: false, skipFonts: true,
-      backgroundColor: '#fdf8ee',
-      style: { width: fullW + 'px', height: fullH + 'px', margin: '0', transform: 'none' },
-      filter: function(node){
-        if (!node || !node.tagName) return true;
-        if (node.tagName === 'LINK') {
-          const href = node.href || node.getAttribute('href') || '';
-          if (/fonts\.googleapis\.com|fonts\.gstatic\.com/.test(href)) return false;
-        }
-        if (node.tagName === 'SCRIPT') return false;
-        return true;
-      }
-    };
-    try {
-      const c = await htmlToImage.toCanvas(flyer, opts);
-      return c.toDataURL('image/png');
-    } catch(e) {
-      console.warn('htmlToImage.toCanvas failed:', e);
-      lastErr = e;
-    }
-    try { return await htmlToImage.toPng(flyer, opts); }
-    catch(e) { console.warn('htmlToImage.toPng failed:', e); lastErr = e; }
-    try { return await htmlToImage.toJpeg(flyer, Object.assign({}, opts, { quality: 0.95 })); }
-    catch(e) { console.warn('htmlToImage.toJpeg failed:', e); lastErr = e; }
-  }
+  // 1. Create isolated capture wrapper
+  const wrapper = document.createElement('div');
+  wrapper.setAttribute('dir', dir);
+  wrapper.setAttribute('lang', lang);
+  wrapper.style.cssText = [
+    'position:absolute',
+    'top:0', 'left:0',
+    'width:' + fullW + 'px',
+    'background:#fdf8ee',
+    'z-index:-1',
+    // Place it offscreen so the user doesn't see it during capture
+    'transform:translateX(-200vw)',
+    'pointer-events:none'
+  ].join(';');
 
-  // FALLBACK: html2canvas (only used if html-to-image fully fails — e.g. Chrome Android
-  // data:URI bug). Note: html2canvas does NOT properly shape Arabic letters, so this
-  // fallback should be a last resort.
-  if (typeof html2canvas === 'function') {
-    try {
-      const canvas = await html2canvas(flyer, {
-        scale: 2.5,
-        useCORS: true,
-        allowTaint: true,
+  // 2. Deep-clone the flyer (preserves all rendered styles)
+  const clone = flyer.cloneNode(true);
+  clone.style.cssText = (flyer.getAttribute('style') || '') + ';width:' + fullW + 'px;max-width:' + fullW + 'px;margin:0;';
+  wrapper.appendChild(clone);
+  document.body.appendChild(wrapper);
+
+  // Wait one frame so the clone lays out and fonts paint
+  await new Promise(function(r){ requestAnimationFrame(function(){ requestAnimationFrame(r); }); });
+  await new Promise(function(r){ setTimeout(r, 200); });
+
+  const fullH = clone.scrollHeight;
+  let dataUrl, lastErr;
+
+  try {
+    // PRIMARY: html-to-image — preserves Arabic shaping correctly
+    if (typeof htmlToImage !== 'undefined' && htmlToImage.toCanvas) {
+      const opts = {
+        width: fullW,
+        height: fullH,
+        pixelRatio: 2.5,
+        cacheBust: false,
         backgroundColor: '#fdf8ee',
-        logging: false,
-        width: fullW, height: fullH,
-        windowWidth: fullW, windowHeight: fullH,
-        foreignObjectRendering: true  // try to preserve native text rendering (incl. Arabic)
-      });
-      return canvas.toDataURL('image/png');
-    } catch(e) {
-      console.warn('html2canvas also failed:', e);
-      lastErr = e;
+        style: {
+          width: fullW + 'px',
+          height: fullH + 'px',
+          margin: '0',
+          transform: 'none'
+        },
+        filter: function(node){
+          if (!node || !node.tagName) return true;
+          // Block external font CSS only — fonts are already in the browser
+          if (node.tagName === 'LINK') {
+            const href = node.href || node.getAttribute('href') || '';
+            if (/fonts\.googleapis\.com|fonts\.gstatic\.com/.test(href)) return false;
+          }
+          if (node.tagName === 'SCRIPT') return false;
+          return true;
+        }
+      };
+      try {
+        const c = await htmlToImage.toCanvas(clone, opts);
+        dataUrl = c.toDataURL('image/png');
+      } catch(e) {
+        console.warn('htmlToImage.toCanvas failed:', e);
+        lastErr = e;
+      }
+      if (!dataUrl) {
+        try { dataUrl = await htmlToImage.toPng(clone, opts); }
+        catch(e) { console.warn('htmlToImage.toPng failed:', e); lastErr = e; }
+      }
+      if (!dataUrl) {
+        try { dataUrl = await htmlToImage.toJpeg(clone, Object.assign({}, opts, { quality: 0.95 })); }
+        catch(e) { console.warn('htmlToImage.toJpeg failed:', e); lastErr = e; }
+      }
     }
+
+    // FALLBACK: html2canvas (only if all html-to-image methods failed)
+    if (!dataUrl && typeof html2canvas === 'function') {
+      try {
+        const canvas = await html2canvas(clone, {
+          scale: 2.5,
+          useCORS: true,
+          allowTaint: true,
+          backgroundColor: '#fdf8ee',
+          logging: false,
+          width: fullW,
+          height: fullH,
+          windowWidth: fullW,
+          windowHeight: fullH,
+          foreignObjectRendering: true
+        });
+        dataUrl = canvas.toDataURL('image/png');
+      } catch(e) {
+        console.warn('html2canvas also failed:', e);
+        lastErr = e;
+      }
+    }
+  } finally {
+    // ALWAYS remove the temporary clone
+    if (wrapper.parentNode) wrapper.parentNode.removeChild(wrapper);
   }
 
-  throw lastErr || new Error('No capture library available.');
+  if (!dataUrl) throw lastErr || new Error('No capture library produced an image.');
+  return dataUrl;
 }
 
 /* ── 6. Format an unknown thrown value into a useful message ────── */
@@ -1616,9 +1679,9 @@ async function downloadPNG() {
     swappedQrs = replaceQrCanvasesWithImg();
     await waitForImagesReady(swappedQrs);
 
-    flyer.setAttribute('style', origStyle + ';width:560px !important;');
+    // Pause CTA pulse animation so the captured image looks clean (not mid-pulse)
     if (ctaBtn) ctaBtn.style.animation = 'none';
-    await new Promise(function(r){ setTimeout(r, 300); });
+    await new Promise(function(r){ setTimeout(r, 100); });
 
     const dataUrl = await captureFlyer(flyer);
     if (!dataUrl || typeof dataUrl !== 'string' || dataUrl.length < 100) {

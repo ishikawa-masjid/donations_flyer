@@ -1388,8 +1388,7 @@ html[lang="ja"] .fc-online-lbl{ font-family:'Noto Sans JP',sans-serif; font-size
   ════════════════════════════════════════════════════════════════════ -->
 <!-- QR code generator (works locally, no API call needed) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-<!-- Image-from-DOM libraries: html-to-image (primary, preserves Arabic shaping) + html2canvas (fallback) -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<!-- Image-from-DOM library: html-to-image (preserves Arabic letter shaping) -->
 <script src="https://cdn.jsdelivr.net/npm/html-to-image@1.11.13/dist/html-to-image.min.js"></script>
 
 <script>
@@ -1503,119 +1502,37 @@ async function ensureFontsLoaded() {
   }));
 }
 
-/* ── 5. Capture flyer to PNG (html-to-image first → html2canvas fallback) ─
-
-   Why we capture from a CLONE rather than the live element:
-   - The live flyer is inside a flex-centered body (align-items:center)
-   - With RTL/LTR direction, the capture libraries sometimes get the bounding
-     box wrong and crop the result in half
-   - Cloning into an isolated, top-left-aligned wrapper guarantees a clean,
-     full-frame capture every time
+/* ── 5. Capture flyer to PNG ─────────────────────────────────────
+   Simple direct call to html-to-image — the same approach that worked
+   reliably before all the complications. Just set width:560px on the
+   flyer, call toPng, done.
 */
 async function captureFlyer(flyer) {
   const fullW = 560;
-  const dir = document.documentElement.getAttribute('dir') || 'rtl';
-  const lang = document.documentElement.getAttribute('lang') || 'ar';
+  const origStyle = flyer.getAttribute('style') || '';
+  flyer.setAttribute('style', origStyle + ';width:560px !important;');
+  await new Promise(function(r){ setTimeout(r, 100); });
 
-  // 1. Create isolated capture wrapper
-  const wrapper = document.createElement('div');
-  wrapper.setAttribute('dir', dir);
-  wrapper.setAttribute('lang', lang);
-  wrapper.style.cssText = [
-    'position:absolute',
-    'top:0', 'left:0',
-    'width:' + fullW + 'px',
-    'background:#fdf8ee',
-    'z-index:-1',
-    // Place it offscreen so the user doesn't see it during capture
-    'transform:translateX(-200vw)',
-    'pointer-events:none'
-  ].join(';');
-
-  // 2. Deep-clone the flyer (preserves all rendered styles)
-  const clone = flyer.cloneNode(true);
-  clone.style.cssText = (flyer.getAttribute('style') || '') + ';width:' + fullW + 'px;max-width:' + fullW + 'px;margin:0;';
-  wrapper.appendChild(clone);
-  document.body.appendChild(wrapper);
-
-  // Wait one frame so the clone lays out and fonts paint
-  await new Promise(function(r){ requestAnimationFrame(function(){ requestAnimationFrame(r); }); });
-  await new Promise(function(r){ setTimeout(r, 200); });
-
-  const fullH = clone.scrollHeight;
-  let dataUrl, lastErr;
+  const fullH = flyer.scrollHeight;
 
   try {
-    // PRIMARY: html-to-image — preserves Arabic shaping correctly
-    if (typeof htmlToImage !== 'undefined' && htmlToImage.toCanvas) {
-      const opts = {
-        width: fullW,
-        height: fullH,
-        pixelRatio: 2.5,
-        cacheBust: false,
-        backgroundColor: '#fdf8ee',
-        style: {
-          width: fullW + 'px',
-          height: fullH + 'px',
-          margin: '0',
-          transform: 'none'
-        },
-        filter: function(node){
-          if (!node || !node.tagName) return true;
-          // Block external font CSS only — fonts are already in the browser
-          if (node.tagName === 'LINK') {
-            const href = node.href || node.getAttribute('href') || '';
-            if (/fonts\.googleapis\.com|fonts\.gstatic\.com/.test(href)) return false;
-          }
-          if (node.tagName === 'SCRIPT') return false;
-          return true;
-        }
-      };
-      try {
-        const c = await htmlToImage.toCanvas(clone, opts);
-        dataUrl = c.toDataURL('image/png');
-      } catch(e) {
-        console.warn('htmlToImage.toCanvas failed:', e);
-        lastErr = e;
+    const dataUrl = await htmlToImage.toPng(flyer, {
+      width: fullW,
+      height: fullH,
+      pixelRatio: 2.5,
+      backgroundColor: '#fdf8ee',
+      cacheBust: true,
+      style: {
+        width: fullW + 'px',
+        height: fullH + 'px',
+        margin: '0',
+        transform: 'none'
       }
-      if (!dataUrl) {
-        try { dataUrl = await htmlToImage.toPng(clone, opts); }
-        catch(e) { console.warn('htmlToImage.toPng failed:', e); lastErr = e; }
-      }
-      if (!dataUrl) {
-        try { dataUrl = await htmlToImage.toJpeg(clone, Object.assign({}, opts, { quality: 0.95 })); }
-        catch(e) { console.warn('htmlToImage.toJpeg failed:', e); lastErr = e; }
-      }
-    }
-
-    // FALLBACK: html2canvas (only if all html-to-image methods failed)
-    if (!dataUrl && typeof html2canvas === 'function') {
-      try {
-        const canvas = await html2canvas(clone, {
-          scale: 2.5,
-          useCORS: true,
-          allowTaint: true,
-          backgroundColor: '#fdf8ee',
-          logging: false,
-          width: fullW,
-          height: fullH,
-          windowWidth: fullW,
-          windowHeight: fullH,
-          foreignObjectRendering: true
-        });
-        dataUrl = canvas.toDataURL('image/png');
-      } catch(e) {
-        console.warn('html2canvas also failed:', e);
-        lastErr = e;
-      }
-    }
+    });
+    return dataUrl;
   } finally {
-    // ALWAYS remove the temporary clone
-    if (wrapper.parentNode) wrapper.parentNode.removeChild(wrapper);
+    flyer.setAttribute('style', origStyle);
   }
-
-  if (!dataUrl) throw lastErr || new Error('No capture library produced an image.');
-  return dataUrl;
 }
 
 /* ── 6. Format an unknown thrown value into a useful message ────── */
@@ -1666,14 +1583,14 @@ async function downloadPNG() {
   btn.innerHTML = t.loadingFonts;
 
   try {
-    const hasH2C = typeof html2canvas === 'function';
-    const hasHTI = typeof htmlToImage !== 'undefined' && htmlToImage.toCanvas;
-    if (!hasH2C && !hasHTI) throw new Error(t.libErr);
+    if (typeof htmlToImage === 'undefined' || !htmlToImage.toPng) {
+      throw new Error(t.libErr);
+    }
 
     generateQRs();
-    await new Promise(function(r){ setTimeout(r, 100); });
     await ensureFontsLoaded();
-    await new Promise(function(r){ setTimeout(r, 500); });
+    // Small pause to ensure fonts are painted to the page
+    await new Promise(function(r){ setTimeout(r, 200); });
 
     btn.innerHTML = t.generating;
 
@@ -1682,7 +1599,6 @@ async function downloadPNG() {
 
     // Pause CTA pulse animation so the captured image looks clean (not mid-pulse)
     if (ctaBtn) ctaBtn.style.animation = 'none';
-    await new Promise(function(r){ setTimeout(r, 100); });
 
     const dataUrl = await captureFlyer(flyer);
     if (!dataUrl || typeof dataUrl !== 'string' || dataUrl.length < 100) {

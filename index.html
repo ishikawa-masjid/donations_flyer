@@ -62,8 +62,6 @@ body{
 
 /* ═══════════════════════════════════════════════════════════════════════
    2.  LANGUAGE SWITCHING (Arabic ↔ English ↔ Japanese)
-   Use !important + multiple properties so html-to-image's SVG capture
-   reliably hides inactive languages.
    ═══════════════════════════════════════════════════════════════════════ */
 html[lang="en"] body{ font-family:'Inter',sans-serif; }
 html[lang="ja"] body{ font-family:'Noto Sans JP',sans-serif; }
@@ -841,6 +839,126 @@ html[lang="ja"] .fc-online-lbl{ font-family:'Noto Sans JP',sans-serif; font-size
   .cta-or{ display:none; }
   .cta-row{ gap:6px; }
 }
+
+/* ═══════════════════════════════════════════════════════════════════════
+   17.  PRINT / PDF — A4 single-page borderless layout
+   ═══════════════════════════════════════════════════════════════════════ */
+@page {
+  size: A4 portrait;
+  margin: 0 !important;
+}
+@media print {
+  /* Hide UI chrome that doesn't belong in the printed flyer */
+  .toolbar,
+  .cta-wrap{ display: none !important; }
+
+  /* Stop all animations during print */
+  *{ animation: none !important; transition: none !important; }
+
+  /* Ensure all gradients & background colors are kept (browsers strip them by default) */
+  *{
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  /* Reset page — zero margins, white background, no flex centering */
+  html, body{
+    background: white !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    max-width: none !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+
+  /* The flyer fills the full A4 page edge-to-edge (no white border) */
+  .flyer{
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    page-break-inside: avoid;
+    page-break-after: avoid;
+    break-inside: avoid;
+    break-after: avoid;
+  }
+
+  /* Note: body zoom is set dynamically by downloadPDF() before print,
+     so the flyer always fits on exactly one A4 page regardless of language. */
+
+  /* Hide flyer's inner gold borders (they're for screen aesthetic only;
+     on paper, edge-to-edge looks cleaner) */
+  .flyer::before,
+  .flyer::after{ display: none !important; }
+
+  /* Last element must NOT cause a trailing blank page */
+  .bot-bar{ page-break-after: avoid !important; break-after: avoid !important; }
+  body > *:last-child{ margin-bottom: 0 !important; padding-bottom: 0 !important; }
+
+  /* A4 portrait = 210mm wide. Slightly bump up text sizes since the design
+     is sized for ~375px mobile but A4 width prints to ~700-800px. */
+  .story p{ font-size: 12.5px !important; line-height: 1.55 !important; }
+  html[lang="en"] .story p{ font-size: 12px !important; }
+  .story-hl{ font-size: 12px !important; }
+  .deadline .dl-t{ font-size: 11.5px !important; }
+  .lc-value{ font-size: 13.5px !important; }
+  .agreed-amt{ font-size: 21px !important; }
+  .sc .sn{ font-size: 13.5px !important; }
+  .sc .sl{ font-size: 9.5px !important; }
+  .hero-amt{ font-size: 36px !important; }
+  .fcl{ font-size: 10.5px !important; }
+  .fcl.bold{ font-size: 11px !important; }
+  .fcl.ltr{ font-size: 10px !important; }
+  .fcl.email{ font-size: 9.5px !important; }
+  .ribbon p{ font-size: 12px !important; }
+  .sec span{ font-size: 13px !important; }
+  .dua-hadith{ font-size: 13px !important; }
+  .dua-main{ font-size: 11px !important; }
+  .act .al{ font-size: 11px !important; }
+  .cost-item .ci-l, .cost-item .ci-v{ font-size: 11px !important; }
+
+  /* Footer QR sized for clear scanning from printed paper */
+  .fc-online-qr canvas,
+  .fc-online-qr img{ width: 95px !important; height: 95px !important; }
+  .fc-online-qr{ padding: 5px !important; }
+  .fc-online-lbl{ font-size: 10.5px !important; }
+  .fc-online-platform{ font-size: 9px !important; }
+
+  /* Tighten internal spacings to squeeze everything onto one A4 page */
+  .story{ padding: 4px 14px !important; }
+  .land{ padding: 4px 14px !important; }
+  .fin{ padding: 4px 14px 5px !important; }
+  .hero{ padding: 5px 14px !important; }
+  .cost-split{ padding: 4px 14px !important; }
+  .acts{ padding: 4px 14px !important; }
+  .share{ padding: 4px 14px !important; }
+  .dua{ padding: 4px 14px !important; }
+  .dua-intro{ margin-bottom: 3px !important; }
+  .dua-box{ padding: 5px 10px 4px !important; }
+  .fc-body{ padding: 4px 8px 5px !important; }
+  .hdr-inner{ padding: 8px 14px 6px !important; }
+  .ribbon{ padding: 3px 14px !important; }
+  .sec{ padding: 3px 14px !important; }
+  .agreed{ padding: 4px 9px !important; margin-bottom: 4px !important; }
+  .stats3{ margin-bottom: 4px !important; }
+  .prog-row{ margin-bottom: 3px !important; }
+  .deadline{ padding: 4px 9px !important; }
+  .addr-line{ padding: 3px 14px !important; }
+  .gold-div, .bot-bar{ height: 3px !important; }
+
+  /* Avoid awkward page breaks inside key sections */
+  .hdr, .ribbon, .land, .fin, .hero, .acts, .share, .dua, .footer,
+  .cost-split, .stats3, .deadline, .agreed, .dua-box, .land-card,
+  .addr-line, .bot-bar{
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+}
 </style>
 </head>
 
@@ -850,10 +968,10 @@ html[lang="ja"] .fc-online-lbl{ font-family:'Noto Sans JP',sans-serif; font-size
   TOP TOOLBAR
   ════════════════════════════════════════════════════════════════════ -->
 <div class="toolbar">
-  <button class="tb-btn" id="dlBtn" onclick="downloadPNG()">
-    <span class="txt-ar">📥 تحميل كصورة</span>
-    <span class="txt-en">📥 Download</span>
-          <span class="txt-ja">📥 ダウンロード</span>
+  <button class="tb-btn" id="dlBtn" onclick="downloadPDF()">
+    <span class="txt-ar">📄 تحميل PDF</span>
+    <span class="txt-en">📄 Download PDF</span>
+    <span class="txt-ja">📄 PDF ダウンロード</span>
   </button>
   <button class="tb-btn alt" onclick="shareFlyer()">
     <span class="txt-ar">🔗 مشاركة</span>
@@ -1390,8 +1508,6 @@ html[lang="ja"] .fc-online-lbl{ font-family:'Noto Sans JP',sans-serif; font-size
   ════════════════════════════════════════════════════════════════════ -->
 <!-- QR code generator (works locally, no API call needed) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-<!-- Image-from-DOM library: html-to-image (preserves Arabic letter shaping) -->
-<script src="https://cdn.jsdelivr.net/npm/html-to-image@1.11.13/dist/html-to-image.min.js"></script>
 
 <script>
 'use strict';
@@ -1443,198 +1559,100 @@ function toggleLang() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-/* ── 3. Helpers: convert canvas QRs to <img> for reliable capture ─ */
-function replaceQrCanvasesWithImg() {
-  const swapped = [];
-  document.querySelectorAll('#ctaQr, #footerQr').forEach(function(div){
-    const canvas = div.querySelector('canvas');
-    if (!canvas) return;
-    try {
-      const dataUrl = canvas.toDataURL('image/png');
-      const img = document.createElement('img');
-      img.src = dataUrl;
-      img.alt = 'QR Code';
-      img.width = canvas.width;
-      img.height = canvas.height;
-      img.style.width  = canvas.style.width  || (canvas.width  + 'px');
-      img.style.height = canvas.style.height || (canvas.height + 'px');
-      canvas.style.display = 'none';
-      canvas.parentNode.insertBefore(img, canvas.nextSibling);
-      swapped.push({ canvas: canvas, img: img });
-    } catch(e) { console.warn('QR canvas->img conversion failed:', e); }
-  });
-  return swapped;
-}
-function restoreQrCanvases(swapped) {
-  if (!swapped) return;
-  swapped.forEach(function(p){
-    if (p.img && p.img.parentNode) p.img.parentNode.removeChild(p.img);
-    if (p.canvas) p.canvas.style.display = '';
-  });
-}
-async function waitForImagesReady(swapped) {
-  if (!swapped || !swapped.length) return;
-  await Promise.all(swapped.map(function(p){
-    if (!p.img) return Promise.resolve();
-    if (p.img.complete && p.img.naturalWidth > 0) return Promise.resolve();
-    return new Promise(function(resolve){
-      p.img.onload = resolve;
-      p.img.onerror = resolve;
-      setTimeout(resolve, 1500);
-    });
-  }));
-}
-
-/* ── 4. Wait for fonts safely (handles browsers where load() returns undefined) ─ */
-async function ensureFontsLoaded() {
-  if (!document.fonts) return;
-  try { await document.fonts.ready; } catch(e) {}
-  if (typeof document.fonts.load !== 'function') return;
-  const specs = [
-    '400 12px Amiri', '700 12px Amiri',
-    '700 36px "Reem Kufi"', '700 13px Cairo',
-    '400 12px Inter', '700 12px Inter',
-    '700 30px "Playfair Display"',
-  ];
-  await Promise.all(specs.map(function(spec){
-    try {
-      const p = document.fonts.load(spec);
-      return (p && typeof p.then === 'function') ? p.catch(function(){}) : Promise.resolve();
-    } catch(e) { return Promise.resolve(); }
-  }));
-}
-
-/* ── 5. Capture flyer to PNG ─────────────────────────────────────
-   Simple direct call to html-to-image — the same approach that worked
-   reliably before all the complications. Just set width:560px on the
-   flyer, call toPng, done.
+/* ── 3. Download as PDF (auto-fits flyer to one A4 page) ──────────
+   Strategy:
+   1. Temporarily simulate print conditions (hide CTA, tighten spacings)
+   2. Measure the resulting flyer height
+   3. Calculate the exact zoom needed to fit it on one A4 page
+   4. Apply that zoom, open print dialog
+   5. Restore everything when print dialog closes
 */
-async function captureFlyer(flyer) {
-  const fullW = 560;
-  const origStyle = flyer.getAttribute('style') || '';
-  flyer.setAttribute('style', origStyle + ';width:560px !important;');
-  await new Promise(function(r){ setTimeout(r, 100); });
-
-  const fullH = flyer.scrollHeight;
-
-  try {
-    const dataUrl = await htmlToImage.toPng(flyer, {
-      width: fullW,
-      height: fullH,
-      pixelRatio: 2.5,
-      backgroundColor: '#fdf8ee',
-      cacheBust: true,
-      style: {
-        width: fullW + 'px',
-        height: fullH + 'px',
-        margin: '0',
-        transform: 'none'
-      }
-    });
-    return dataUrl;
-  } finally {
-    flyer.setAttribute('style', origStyle);
-  }
-}
-
-/* ── 6. Format an unknown thrown value into a useful message ────── */
-function describeError(e, lang) {
-  if (e && e.message) return e.message;
-  if (e instanceof Event) {
-    const target = e.target;
-    const prefix = lang === 'ja' ? 'リソースの読み込みに失敗しました: '
-                  : lang === 'en' ? 'Failed to load resource: '
-                  : 'فشل تحميل المورد: ';
-    const generic = lang === 'ja' ? 'リソースの読み込みに失敗しました。'
-                  : lang === 'en' ? 'A resource failed to load.'
-                  : 'فشل تحميل أحد الموارد.';
-    if (target && target.src) return prefix + target.src;
-    return generic;
-  }
-  return String(e || 'Unknown error');
-}
-
-/* ── 7. Download the flyer as PNG ───────────────────────────────── */
-async function downloadPNG() {
-  const btn = document.getElementById('dlBtn');
+function downloadPDF() {
   const lang = document.documentElement.getAttribute('lang') || 'ar';
-  const flyer = document.getElementById('flyer');
 
-  // i18n strings for status & messages
-  const t = {
-    loadingFonts: lang === 'ja' ? '⏳ フォント読み込み中...' : lang === 'en' ? '⏳ Loading fonts...' : '⏳ جاري تحميل الخطوط...',
-    generating:   lang === 'ja' ? '⏳ 画像生成中...'        : lang === 'en' ? '⏳ Generating image...' : '⏳ إنشاء الصورة...',
-    libErr:       lang === 'ja' ? '画像ライブラリの読み込みに失敗しました。インターネット接続を確認しページを再読み込みしてください。'
-                : lang === 'en' ? 'Image library failed to load. Check your internet and reload the page.'
-                                : 'فشل تحميل مكتبة الصور. تحقق من الاتصال وأعد تحميل الصفحة.',
-    genErr:       lang === 'ja' ? '画像を生成できませんでした。' : lang === 'en' ? 'Could not generate the image.' : 'تعذّر إنشاء الصورة.',
-    errPrefix:    lang === 'ja' ? 'エラー: ' : lang === 'en' ? 'Error: ' : 'حدث خطأ: ',
-    iosMsg:       lang === 'ja' ? '画像を長押しして保存してください' : lang === 'en' ? 'Long-press the image to save it' : 'اضغط مطولاً على الصورة لحفظها',
-    iosTitle:     lang === 'ja' ? '石川モスク' : lang === 'en' ? 'Ishikawa Masjid' : 'مسجد إيشيكاوا',
-    filename:     lang === 'ja' ? 'Ishikawa-Masjid-JP.png' : lang === 'en' ? 'Ishikawa-Masjid.png' : 'مسجد-إيشيكاوا.png',
-    btnDefault:   '<span class="txt-ar">📥 تحميل كصورة</span><span class="txt-en">📥 Download</span><span class="txt-ja">📥 ダウンロード</span>',
+  // First-time tip
+  const tip = lang === 'ja'
+    ? 'プリンターのリストから「PDFとして保存」を選択してください。'
+    : lang === 'en'
+    ? 'In the printer list, select "Save as PDF" — that will give you a downloadable file.'
+    : 'من قائمة الطابعة، اختر "حفظ كـ PDF" للحصول على ملف قابل للتحميل.';
+  if (!window.__pdfTipShown) {
+    alert(tip);
+    window.__pdfTipShown = true;
+  }
+
+  // ─── Compute the zoom needed to fit on one A4 page ───
+  // A4 portrait at 96 DPI = 794×1123 px (210×297mm)
+  // We use 1100px (slightly under 1123) to leave a tiny safety margin
+  const A4_HEIGHT_PX = 1100;
+  const A4_WIDTH_PX = 794;
+
+  const flyer = document.getElementById('flyer');
+  const body = document.body;
+  const ctaWrap = flyer.querySelector('.cta-wrap');
+  const toolbar = document.querySelector('.toolbar');
+
+  // Save original styles
+  const orig = {
+    bodyZoom:        body.style.zoom,
+    bodyAlign:       body.style.alignItems,
+    bodyDisplay:     body.style.display,
+    flyerWidth:      flyer.style.width,
+    flyerMaxWidth:   flyer.style.maxWidth,
+    ctaDisplay:      ctaWrap ? ctaWrap.style.display : '',
+    toolbarDisplay:  toolbar ? toolbar.style.display : ''
   };
 
-  // Snapshot original styles so we ALWAYS restore them in `finally`
-  const origStyle = flyer.getAttribute('style') || '';
-  const ctaBtn = flyer.querySelector('.cta-btn');
-  const ctaOrigAnim = ctaBtn ? ctaBtn.style.animation : '';
-  let swappedQrs = [];
+  // Apply print-like state for measurement
+  if (ctaWrap)  ctaWrap.style.display  = 'none';
+  if (toolbar)  toolbar.style.display  = 'none';
+  body.style.alignItems = 'flex-start';
+  flyer.style.width = A4_WIDTH_PX + 'px';
+  flyer.style.maxWidth = A4_WIDTH_PX + 'px';
 
-  btn.classList.add('loading');
-  btn.innerHTML = t.loadingFonts;
+  // Measure (force reflow first)
+  void flyer.offsetHeight;
+  const measuredHeight = flyer.scrollHeight;
 
-  try {
-    if (typeof htmlToImage === 'undefined' || !htmlToImage.toPng) {
-      throw new Error(t.libErr);
-    }
+  // Compute zoom — use width OR height ratio, whichever is more restrictive
+  const heightZoom = A4_HEIGHT_PX / measuredHeight;
+  const widthZoom = 1; // width already matches A4
+  let zoom = Math.min(heightZoom, widthZoom);
+  // Cap at 1.0 (never enlarge beyond original — would look weird)
+  // Floor at 0.6 (prevent tiny unreadable text in extreme cases)
+  zoom = Math.max(0.6, Math.min(1.0, zoom));
 
-    generateQRs();
-    await ensureFontsLoaded();
-    // Small pause to ensure fonts are painted to the page
-    await new Promise(function(r){ setTimeout(r, 200); });
+  console.log('[PDF] Measured flyer height:', measuredHeight, 'px → zoom:', zoom.toFixed(3));
 
-    btn.innerHTML = t.generating;
+  // Apply the calculated zoom (will be picked up by print mode too)
+  body.style.zoom = zoom;
 
-    swappedQrs = replaceQrCanvasesWithImg();
-    await waitForImagesReady(swappedQrs);
+  // Restore the visible styles immediately (CTA & toolbar will be hidden
+  // again by @media print rules; we don't need them blanked while user
+  // looks at the print dialog preview)
+  // Actually, keep them hidden so the print preview is clean.
+  // Restore them when print is done.
 
-    // Pause CTA pulse animation so the captured image looks clean (not mid-pulse)
-    if (ctaBtn) ctaBtn.style.animation = 'none';
+  // Open print dialog
+  window.print();
 
-    const dataUrl = await captureFlyer(flyer);
-    if (!dataUrl || typeof dataUrl !== 'string' || dataUrl.length < 100) {
-      throw new Error(t.genErr);
-    }
+  // Restore everything after print dialog closes (or after a delay)
+  const restore = function(){
+    body.style.zoom            = orig.bodyZoom;
+    body.style.alignItems      = orig.bodyAlign;
+    body.style.display         = orig.bodyDisplay;
+    flyer.style.width          = orig.flyerWidth;
+    flyer.style.maxWidth       = orig.flyerMaxWidth;
+    if (ctaWrap)  ctaWrap.style.display  = orig.ctaDisplay;
+    if (toolbar)  toolbar.style.display  = orig.toolbarDisplay;
+  };
 
-    const a = document.createElement('a');
-    a.download = t.filename;
-    a.href = dataUrl;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-
-    if (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream) {
-      const tab = window.open();
-      if (tab) {
-        tab.document.write(
-          '<html><head><title>' + t.iosTitle + '</title></head>' +
-          '<body style="margin:0;background:#000;text-align:center;padding:20px;color:#fff;font-family:sans-serif;">' +
-          '<p>' + t.iosMsg + '</p><img src="' + dataUrl + '" style="max-width:100%;height:auto;"></body></html>'
-        );
-      }
-    }
-
-  } catch(e) {
-    console.error('Download error:', e);
-    alert(t.errPrefix + describeError(e, lang));
-  } finally {
-    flyer.setAttribute('style', origStyle);
-    if (ctaBtn) ctaBtn.style.animation = ctaOrigAnim;
-    restoreQrCanvases(swappedQrs);
-    btn.classList.remove('loading');
-    btn.innerHTML = t.btnDefault;
-  }
+  // Different browsers fire different events. Use whichever happens first.
+  let restored = false;
+  const safeRestore = function(){ if (!restored) { restored = true; restore(); } };
+  window.addEventListener('afterprint', safeRestore, { once: true });
+  // Fallback: restore after a generous delay (in case afterprint doesn't fire)
+  setTimeout(safeRestore, 3000);
 }
 
 /* ── 8. Share via native API or clipboard ───────────────────────── */

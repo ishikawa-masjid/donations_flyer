@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <script data-goatcounter="https://ayman-alashkar.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>   
+        async src="//gc.zgo.at/count.js"></script>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=5.0,user-scalable=yes,viewport-fit=cover">
@@ -85,6 +85,16 @@ html[lang="ja"] .txt-ja.block{ display:block !important; }
 html[lang="ar"] .txt-ar.block{ display:block !important; }
 
 /* ═══════════════════════════════════════════════════════════════════════
+   2b. CURRENCY SWITCHING (USD ↔ JPY)
+   Default is USD. When <html data-currency="jpy"> is set, JPY shows.
+   ═══════════════════════════════════════════════════════════════════════ */
+.cur-jpy{ display: none !important; }
+html[data-currency="jpy"] .cur-usd{ display: none !important; }
+html[data-currency="jpy"] .cur-jpy{ display: inline !important; }
+html[data-currency="jpy"] .cur-jpy.block{ display: block !important; }
+html:not([data-currency="jpy"]) .cur-usd.block{ display: block !important; }
+
+/* ═══════════════════════════════════════════════════════════════════════
    3.  TOP TOOLBAR (Download / Share / Language)
    ═══════════════════════════════════════════════════════════════════════ */
 .toolbar{
@@ -92,7 +102,7 @@ html[lang="ar"] .txt-ar.block{ display:block !important; }
   width:100%; max-width:560px;
   padding:6px;
   background:#0a0a0a;
-  display:grid; grid-template-columns:1fr 1fr auto; gap:6px;
+  display:grid; grid-template-columns:1fr 1fr auto auto; gap:6px;
   border-bottom:1px solid rgba(200,146,30,0.3);
 }
 .tb-btn{
@@ -983,6 +993,10 @@ html[lang="ja"] .fc-online-lbl{ font-family:'Noto Sans JP',sans-serif; font-size
     <span class="txt-en">🌐 日本語</span>
     <span class="txt-ja">🌐 ع</span>
   </button>
+  <button class="tb-btn alt lang" onclick="toggleCurrency()">
+    <span class="cur-usd">💴 JPY</span>
+    <span class="cur-jpy">💵 USD</span>
+  </button>
 </div>
 
 <!-- ════════════════════════════════════════════════════════════════════
@@ -1168,9 +1182,16 @@ html[lang="ja"] .fc-online-lbl{ font-family:'Noto Sans JP',sans-serif; font-size
           <span class="txt-ja">2024年に購入合意:</span>
         </div>
         <div class="agreed-amt">
-          <span class="txt-ar">120,400 دولار</span>
-          <span class="txt-en">$120,400 USD</span>
+          <span class="cur-usd">
+            <span class="txt-ar">120,400 دولار</span>
+            <span class="txt-en">$120,400 USD</span>
           <span class="txt-ja">$120,400 USD</span>
+          </span>
+          <span class="cur-jpy">
+            <span class="txt-ar">¥ 19.1 مليون</span>
+            <span class="txt-en">¥ 19.1 Million</span>
+            <span class="txt-ja">¥ 1,910万</span>
+          </span>
         </div>
         <div class="agreed-sub">
           <span class="txt-ar">يُسدَّد خلال سنة واحدة</span>
@@ -1182,7 +1203,7 @@ html[lang="ja"] .fc-online-lbl{ font-family:'Noto Sans JP',sans-serif; font-size
 
     <div class="stats3">
       <div class="sc sc1">
-        <span class="sn">120,400$</span>
+        <span class="sn"><span class="cur-usd">120,400$</span><span class="cur-jpy">¥19.1M</span></span>
         <span class="sl">
           <span class="txt-ar">المبلغ الإجمالي للأرض</span>
           <span class="txt-en">Total Land Amount</span>
@@ -1190,7 +1211,7 @@ html[lang="ja"] .fc-online-lbl{ font-family:'Noto Sans JP',sans-serif; font-size
         </span>
       </div>
       <div class="sc sc2">
-        <span class="sn">57,400$</span>
+        <span class="sn"><span class="cur-usd">57,400$</span><span class="cur-jpy">¥9.1M</span></span>
         <span class="sl">
           <span class="txt-ar">المبلغ المدفوع</span>
           <span class="txt-en">Amount Paid</span>
@@ -1198,7 +1219,7 @@ html[lang="ja"] .fc-online-lbl{ font-family:'Noto Sans JP',sans-serif; font-size
         </span>
       </div>
       <div class="sc sc3">
-        <span class="sn">63,000$</span>
+        <span class="sn"><span class="cur-usd">63,000$</span><span class="cur-jpy">¥10M</span></span>
         <span class="sl">
           <span class="txt-ar">المبلغ المتبقي</span>
           <span class="txt-en">Amount Remaining</span>
@@ -1226,9 +1247,9 @@ html[lang="ja"] .fc-online-lbl{ font-family:'Noto Sans JP',sans-serif; font-size
     <div class="deadline">
       <div class="dl-i">⚠️</div>
       <div class="dl-t">
-        <span class="txt-ar">المهلة حتى نهاية <strong>يوليو 2026</strong> — وإلا يُلغى العقد وتُفقد <strong>28,700 دولار</strong>. كل مبلغ تتبرع به، مهما كان صغيراً، يُقرِّبنا من الهدف.</span>
-        <span class="txt-en">Deadline by end of <strong>July 2026</strong> — otherwise the contract will be cancelled and <strong>$28,700</strong> already paid will be lost. Every donation, no matter how small, brings us closer to the goal.</span>
-          <span class="txt-ja">期限は<strong>2026年7月末</strong>まで — それまでに完了しない場合、契約は解除され、すでに支払った<strong>$28,700</strong>が失われます。どんな小さな寄付でも、目標達成に近づきます。</span>
+        <span class="txt-ar">المهلة حتى نهاية <strong>يوليو 2026</strong> — وإلا يُلغى العقد وتُفقد <strong><span class="cur-usd">28,700 دولار</span><span class="cur-jpy">4.5 مليون ين</span></strong>. كل مبلغ تتبرع به، مهما كان صغيراً، يُقرِّبنا من الهدف.</span>
+        <span class="txt-en">Deadline by end of <strong>July 2026</strong> — otherwise the contract will be cancelled and <strong><span class="cur-usd">$28,700</span><span class="cur-jpy">¥4.5 Million</span></strong> already paid will be lost. Every donation, no matter how small, brings us closer to the goal.</span>
+          <span class="txt-ja">期限は<strong>2026年7月末</strong>まで — それまでに完了しない場合、契約は解除され、すでに支払った<strong><span class="cur-usd">$28,700</span><span class="cur-jpy">450万円</span></strong>が失われます。どんな小さな寄付でも、目標達成に近づきます。</span>
       </div>
     </div>
 
@@ -1298,7 +1319,7 @@ html[lang="ja"] .fc-online-lbl{ font-family:'Noto Sans JP',sans-serif; font-size
       <span class="txt-en">✨ Total Full Project Amount</span>
           <span class="txt-ja">✨ プロジェクト総額</span>
     </div>
-    <span class="hero-amt">~$250,000</span>
+    <span class="hero-amt"><span class="cur-usd">~$250,000</span><span class="cur-jpy">~¥40M</span></span>
     <div class="hero-sub">
       <span class="txt-ar">يشمل الأرض + بناء المسجد المتكامل</span>
       <span class="txt-en">Includes the land + full masjid construction</span>
@@ -1312,7 +1333,7 @@ html[lang="ja"] .fc-online-lbl{ font-family:'Noto Sans JP',sans-serif; font-size
         <span class="txt-en">🗺️ Remaining Land Cost</span>
           <span class="txt-ja">🗺️ 残りの土地代</span>
       </span>
-      <span class="ci-v">$62K–$65K</span>
+      <span class="ci-v"><span class="cur-usd">$62K–$65K</span><span class="cur-jpy">¥9.9M–¥10.3M</span></span>
     </div>
     <div class="cost-item">
       <span class="ci-l">
@@ -1320,7 +1341,7 @@ html[lang="ja"] .fc-online-lbl{ font-family:'Noto Sans JP',sans-serif; font-size
         <span class="txt-en">🏗 Masjid Construction</span>
           <span class="txt-ja">🏗 モスク建設費</span>
       </span>
-      <span class="ci-v">$155K–$190K</span>
+      <span class="ci-v"><span class="cur-usd">$155K–$190K</span><span class="cur-jpy">¥24.6M–¥30.2M</span></span>
     </div>
   </div>
 
@@ -1557,6 +1578,19 @@ function toggleLang() {
   html.setAttribute('dir', dir);
   document.title = title;
   window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+/* ── 2b. Currency toggle (USD ↔ JPY) ─────────────────────────────
+   Applies across all 3 languages — every amount has cur-usd & cur-jpy variants.
+*/
+function toggleCurrency() {
+  const html = document.documentElement;
+  const isJpy = html.getAttribute('data-currency') === 'jpy';
+  if (isJpy) {
+    html.removeAttribute('data-currency');  // back to USD (default)
+  } else {
+    html.setAttribute('data-currency', 'jpy');
+  }
 }
 
 /* ── 3. Download as PDF (auto-fits flyer to one A4 page) ──────────
